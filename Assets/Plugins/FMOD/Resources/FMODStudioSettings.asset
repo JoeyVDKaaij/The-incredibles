@@ -435,16 +435,16 @@ MonoBehaviour:
     HasValue: 0
   displaySortOrder: 0
   childIdentifiers:
-  - 2c5177b11d81d824dbb064f9ac8527da
-  - e7a046c753c3c3d4aacc91f6597f310d
-  - c88d16e5272a4e241b0ef0ac2e53b73d
-  - fd7c55dab0fce234b8c25f6ffca523c1
-  - 0f8eb3f400726694eb47beb1a9f94ce8
-  - de700ef3f37a49b58a57ae3addf01ad9
-  - b7716510a1f36934c87976f3a81dbf3d
-  - 52eb9df5db46521439908db3a29a1bbb
-  - 2fea114e74ecf3c4f920e1d5cc1c4c40
   - 46fbfdf3fc43db0458918377fd40293e
+  - 2fea114e74ecf3c4f920e1d5cc1c4c40
+  - 52eb9df5db46521439908db3a29a1bbb
+  - b7716510a1f36934c87976f3a81dbf3d
+  - de700ef3f37a49b58a57ae3addf01ad9
+  - 0f8eb3f400726694eb47beb1a9f94ce8
+  - fd7c55dab0fce234b8c25f6ffca523c1
+  - c88d16e5272a4e241b0ef0ac2e53b73d
+  - e7a046c753c3c3d4aacc91f6597f310d
+  - 2c5177b11d81d824dbb064f9ac8527da
   codecChannels:
     Value: []
     HasValue: 0
@@ -536,8 +536,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: 
-  sourceBankPath: 
+  sourceProjectPath: FMOD/FMOD_Project/FMOD_Project.fspro
+  sourceBankPath: FMOD/FMOD_Project/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -572,21 +572,21 @@ MonoBehaviour:
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131617
-  HideSetupWizard: 0
+  HideSetupWizard: 1
   LastEventReferenceScanVersion: 131617
   Platforms:
-  - {fileID: -3390680221156738844}
-  - {fileID: 4020161211325468427}
-  - {fileID: 5338603859505911033}
-  - {fileID: -7549639140288923063}
-  - {fileID: 2147203840522318245}
-  - {fileID: -6219784911091716325}
-  - {fileID: 2819849557427424326}
-  - {fileID: 4847808052516973732}
-  - {fileID: -2273620580049200426}
-  - {fileID: -6333960927097035}
-  - {fileID: -494978926020619697}
   - {fileID: -896767617500532753}
+  - {fileID: -494978926020619697}
+  - {fileID: -6333960927097035}
+  - {fileID: -2273620580049200426}
+  - {fileID: 4847808052516973732}
+  - {fileID: 2819849557427424326}
+  - {fileID: -6219784911091716325}
+  - {fileID: 2147203840522318245}
+  - {fileID: -7549639140288923063}
+  - {fileID: 5338603859505911033}
+  - {fileID: 4020161211325468427}
+  - {fileID: -3390680221156738844}
   MigratedPlatforms: 080000001200000006000000050000000b000000000000000a000000090000000c000000150000000200000001000000
 --- !u!114 &2147203840522318245
 MonoBehaviour:
