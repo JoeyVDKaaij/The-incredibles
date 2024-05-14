@@ -16,7 +16,7 @@ public class AvoidanceBehaviour : FilterFlockBehaviour
         List<Transform> filterContext = (filter == null) ? context : filter.Filter(agent, context);
         foreach (Transform item in filterContext)
         {
-            if(Vector3.SqrMagnitude(item.position + item.localScale - agent.transform.position) < flock.SquareAvoidanceRadius)
+            if(Vector3.SqrMagnitude(item.position - agent.transform.position) < flock.SquareAvoidanceRadius + item.localScale.x + item.localScale.y + item.localScale.z)
             {
                 nAvoid++;
                 avoidanceMove += agent.transform.position - item.position;
