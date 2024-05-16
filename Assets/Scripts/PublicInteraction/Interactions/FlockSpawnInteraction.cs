@@ -10,7 +10,7 @@ public class FlockSpawnInteraction : InteractionBehavior
     protected override void DoAction()
     {
         Debug.Log($"Spawning Flock");
-        Instantiate(flockPrefab);
-        Destroy(flockPrefab, flockTimeAlive);
+        Flock flock = Instantiate(flockPrefab);
+        Destroy(flock.gameObject, flockTimeAlive);
     }
 }

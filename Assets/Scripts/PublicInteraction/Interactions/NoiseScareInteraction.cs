@@ -5,12 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NoiseScareInteraction", menuName = "Interactions/NoiseScareInteraction")]
 public class NoiseScareInteraction : InteractionBehavior
 {
-    //Reference to sound
-
     protected override void DoAction()
     {
         //Play the sound here
-
+        AudioManager.Instance.PlayScareSound();
         Debug.Log("NOISE SCARE!");
     }
 }
