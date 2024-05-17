@@ -6,11 +6,12 @@ using UnityEngine;
 public class FlockSpawnInteraction : InteractionBehavior
 {
     [SerializeField] private Flock flockPrefab;
-    [SerializeField] private float flockTimeAlive = 5f;
+    [SerializeField] private float timeAlive = 5f;
+    [SerializeField] private Vector3 offSet = new Vector3(0, 3, 0);
     protected override void DoAction()
     {
         Debug.Log($"Spawning Flock");
-        Flock flock = Instantiate(flockPrefab);
-        Destroy(flock.gameObject, flockTimeAlive);
+        Flock flock = Instantiate(flockPrefab, player.position + offSet, Quaternion.identity);
+        Destroy(flock.gameObject, timeAlive);
     }
 }
