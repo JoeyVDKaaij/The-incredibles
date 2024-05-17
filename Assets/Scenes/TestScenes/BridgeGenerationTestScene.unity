@@ -156,7 +156,7 @@ MonoBehaviour:
   - {fileID: 4333067550054004232, guid: 227a4c1dd8724cc4fbb5ebe4c2b20857, type: 3}
   - {fileID: 4333067550054004232, guid: 227a4c1dd8724cc4fbb5ebe4c2b20857, type: 3}
   - {fileID: 4333067550054004232, guid: 227a4c1dd8724cc4fbb5ebe4c2b20857, type: 3}
-  generatePlanksAmount: 10
+  generatePlanksAmount: 99
   generateXAxis: 1
   generateYAxis: 0
   generateZAxis: 0
