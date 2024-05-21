@@ -85,7 +85,7 @@ public class BridgeGenerationScript : MonoBehaviour
             
             plank.transform.localPosition = new Vector3(plank.transform.position.x, Mathf.Sin(plankComparedToLowestPlank * Mathf.PI) * lowestPossiblePosition);
 
-            plank.transform.rotation = Quaternion.Euler(rotation);
+            plank.transform.localRotation = Quaternion.Euler(rotation);
         }
 
         int childCount = transform.childCount;
@@ -102,7 +102,7 @@ public class BridgeGenerationScript : MonoBehaviour
             
             rotation.z += Mathf.Cos((float)i / (childCount-1) * Mathf.PI) * degrees;
             
-            transform.GetChild(i).transform.rotation = Quaternion.Euler(rotation);
+            transform.GetChild(i).transform.localRotation = Quaternion.Euler(rotation);
         }
     }
 }

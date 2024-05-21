@@ -8,7 +8,7 @@ namespace Unity.VRTemplate
     /// <summary>
     /// An interactable knob that follows the rotation of the interactor
     /// </summary>
-    public class XRKnob : XRBaseInteractable
+    public class XRKnob :XRBaseInteractable
     {
         const float k_ModeSwitchDeadZone = 0.1f; // Prevents rapid switching between the different rotation tracking modes
 
