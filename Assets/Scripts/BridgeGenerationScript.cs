@@ -1,4 +1,3 @@
-using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -49,7 +48,7 @@ public class BridgeGenerationScript : MonoBehaviour
         {
             for (int i = transform.childCount-1; i >= 0; i--)
             {
-                Destroy(transform.GetChild(i).gameObject);
+                DestroyImmediate(transform.GetChild(i).gameObject);
             }
         }
         
@@ -61,14 +60,20 @@ public class BridgeGenerationScript : MonoBehaviour
             plank.transform.position = _spawnPoint;
             
             Vector3 rotation = Vector3.zero;
-            
+
             if (generateXAxis)
             {
-                _spawnPoint.x += plank.transform.lossyScale.x + positionPadding;
+                if (generateXAxis && generateZAxis)
+                    _spawnPoint.x += Mathf.Sqrt(Mathf.Pow(plank.transform.lossyScale.x,2)/3) + positionPadding;
+                else
+                    _spawnPoint.x += generateYAxis||generateZAxis?Mathf.Sqrt(Mathf.Pow(plank.transform.lossyScale.x,2)/2):plank.transform.lossyScale.x + positionPadding;
             }
             if (generateYAxis)
             {
-                _spawnPoint.y += plank.transform.lossyScale.x + positionPadding;
+                if (generateXAxis && generateZAxis)
+                    _spawnPoint.y += Mathf.Sqrt(Mathf.Pow(plank.transform.lossyScale.x,2)/3) + positionPadding;
+                else
+                    _spawnPoint.y += generateXAxis||generateZAxis?Mathf.Sqrt(Mathf.Pow(plank.transform.lossyScale.x,2)/2):plank.transform.lossyScale.x + positionPadding;
                 if (generateXAxis || generateZAxis)
                     rotation.z = generateXAxis?45:-45;
                 else
@@ -76,33 +81,14 @@ public class BridgeGenerationScript : MonoBehaviour
             }
             if (generateZAxis)
             {
-                _spawnPoint.z += plank.transform.lossyScale.x + positionPadding;
+                if (generateXAxis && generateZAxis)
+                    _spawnPoint.z += Mathf.Sqrt(Mathf.Pow(plank.transform.lossyScale.x,2)/3) + positionPadding;
+                else
+                    _spawnPoint.z += generateXAxis||generateYAxis?Mathf.Sqrt(Mathf.Pow(plank.transform.lossyScale.x,2)/2):plank.transform.lossyScale.x + positionPadding;
                 rotation.y = generateXAxis?-45:90;
             }
-            
-            
-            float plankComparedToLowestPlank = (float)i / (generatePlanksAmount-1);
-            
-            plank.transform.localPosition = new Vector3(plank.transform.position.x, Mathf.Sin(plankComparedToLowestPlank * Mathf.PI) * lowestPossiblePosition);
 
-            plank.transform.localRotation = Quaternion.Euler(rotation);
-        }
-
-        int childCount = transform.childCount;
-
-        GameObject middleChild = transform.GetChild(Mathf.Abs(childCount/2)-1).gameObject;
-        
-        for (int i = 0; i < childCount; i++)
-        {
-            Vector3 rotation = transform.GetChild(i).rotation.eulerAngles;
-
-            float degrees = Mathf.Atan2(middleChild.transform.localPosition.y, middleChild.transform.localPosition.x);
-            degrees = -Mathf.Rad2Deg;
-            Debug.Log(degrees);
-            
-            rotation.z += Mathf.Cos((float)i / (childCount-1) * Mathf.PI) * degrees;
-            
-            transform.GetChild(i).transform.localRotation = Quaternion.Euler(rotation);
+            plank.transform.rotation = Quaternion.Euler(rotation);
         }
     }
 }
