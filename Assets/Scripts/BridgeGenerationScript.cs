@@ -16,8 +16,6 @@ public class BridgeGenerationScript : MonoBehaviour
     private bool generateZAxis = false;
     [SerializeField, Tooltip("Set the padding between planks."), Min(0)]
     private float positionPadding = 1f;
-    [SerializeField, Tooltip("Set the padding between planks.")]
-    private float lowestPossiblePosition = -5f;
 
     private bool[] _oldGenerateBools = new [] { true, false, false };
     
@@ -57,6 +55,7 @@ public class BridgeGenerationScript : MonoBehaviour
         {
             GameObject plank = Instantiate(plankGameObjects[Random.Range(0, plankGameObjects.Length)], transform);
 
+            
             plank.transform.position = _spawnPoint;
             
             Vector3 rotation = Vector3.zero;
@@ -66,14 +65,14 @@ public class BridgeGenerationScript : MonoBehaviour
                 if (generateXAxis && generateZAxis)
                     _spawnPoint.x += Mathf.Sqrt(Mathf.Pow(plank.transform.lossyScale.x,2)/3) + positionPadding;
                 else
-                    _spawnPoint.x += generateYAxis||generateZAxis?Mathf.Sqrt(Mathf.Pow(plank.transform.lossyScale.x,2)/2):plank.transform.lossyScale.x + positionPadding;
+                    _spawnPoint.x += (generateYAxis||generateZAxis?Mathf.Sqrt(Mathf.Pow(plank.transform.lossyScale.x,2)/2):plank.transform.lossyScale.x) + positionPadding;
             }
             if (generateYAxis)
             {
                 if (generateXAxis && generateZAxis)
                     _spawnPoint.y += Mathf.Sqrt(Mathf.Pow(plank.transform.lossyScale.x,2)/3) + positionPadding;
                 else
-                    _spawnPoint.y += generateXAxis||generateZAxis?Mathf.Sqrt(Mathf.Pow(plank.transform.lossyScale.x,2)/2):plank.transform.lossyScale.x + positionPadding;
+                    _spawnPoint.y += (generateXAxis||generateZAxis?Mathf.Sqrt(Mathf.Pow(plank.transform.lossyScale.x,2)/2):plank.transform.lossyScale.x) + positionPadding;
                 if (generateXAxis || generateZAxis)
                     rotation.z = generateXAxis?45:-45;
                 else
@@ -84,11 +83,25 @@ public class BridgeGenerationScript : MonoBehaviour
                 if (generateXAxis && generateZAxis)
                     _spawnPoint.z += Mathf.Sqrt(Mathf.Pow(plank.transform.lossyScale.x,2)/3) + positionPadding;
                 else
-                    _spawnPoint.z += generateXAxis||generateYAxis?Mathf.Sqrt(Mathf.Pow(plank.transform.lossyScale.x,2)/2):plank.transform.lossyScale.x + positionPadding;
+                    _spawnPoint.z += (generateXAxis||generateYAxis?Mathf.Sqrt(Mathf.Pow(plank.transform.lossyScale.x,2)/2):plank.transform.lossyScale.x) + positionPadding;
                 rotation.y = generateXAxis?-45:90;
             }
 
             plank.transform.rotation = Quaternion.Euler(rotation);
+            
+            Rigidbody rb = plank.GetComponent<Rigidbody>();
+            HingeJoint hj = plank.GetComponent<HingeJoint>();
+            
+            if (i == 0 || i  == generatePlanksAmount -1)
+            {
+                if (i == 0) DestroyImmediate(hj);
+                rb.useGravity = false;
+                rb.isKinematic = true;
+            }
+            if (i > 0)
+            {
+                hj.connectedBody = transform.GetChild(i - 1).GetComponent<Rigidbody>();
+            }
         }
     }
 }
