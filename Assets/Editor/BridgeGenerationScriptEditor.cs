@@ -10,7 +10,6 @@ public class BridgeGenerationScriptEditor : Editor
     private SerializedProperty _generateYAxisProp;
     private SerializedProperty _generateZAxisProp;
     private SerializedProperty _positionPaddingProp;
-    private SerializedProperty _lowestPossiblePositionProp;
     
     private void OnEnable()
     {
@@ -20,7 +19,6 @@ public class BridgeGenerationScriptEditor : Editor
         _generateYAxisProp = serializedObject.FindProperty("generateYAxis");
         _generateZAxisProp = serializedObject.FindProperty("generateZAxis");
         _positionPaddingProp = serializedObject.FindProperty("positionPadding");
-        _lowestPossiblePositionProp = serializedObject.FindProperty("lowestPossiblePosition");
     }
 
     public override void OnInspectorGUI()
@@ -34,7 +32,6 @@ public class BridgeGenerationScriptEditor : Editor
         EditorGUILayout.PropertyField(_generateYAxisProp);
         EditorGUILayout.PropertyField(_generateZAxisProp);
         EditorGUILayout.PropertyField(_positionPaddingProp);
-        EditorGUILayout.PropertyField(_lowestPossiblePositionProp);
         
         serializedObject.ApplyModifiedProperties();
         
