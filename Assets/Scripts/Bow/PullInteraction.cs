@@ -50,7 +50,7 @@ public class PullInteraction : XRBaseInteractable
                 pullAmount = CalculatePull(pullPosition);
                 UpdateString();
 
-                HapticFeedback();
+                //HapticFeedback();
             }
         }
     }
@@ -75,14 +75,14 @@ public class PullInteraction : XRBaseInteractable
         lineRenderer.SetPosition(1, linePosition);
     }
 
-    private void HapticFeedback()
-    {
-        if(pullingInteractor != null)
-        {
-            ActionBasedController currentController = pullingInteractor.transform.gameObject.GetComponent<ActionBasedController>();
-            currentController.SendHapticImpulse(pullAmount, .1f);
-        }
-    }
+    //private void HapticFeedback()
+    //{
+    //    if(pullingInteractor != null)
+    //    {
+    //        ActionBasedController currentController = pullingInteractor.transform.gameObject.GetComponent<ActionBasedController>();
+    //        currentController.SendHapticImpulse(pullAmount, .1f);
+    //    }
+    //}
 
     private void PlayReleaseSound()
     {

@@ -6,6 +6,10 @@ public class Arrow : MonoBehaviour
     [SerializeField] private float _speed = 10f;
     [SerializeField] private Transform tip;
 
+    [Space(2)]
+    [Header("Extra settings")]
+    [SerializeField] private float arrowTimeTillDespawn = 5f;
+
     private Rigidbody _rigidbody;
     private bool _inAir = false;
     private Vector3 _lastPosition = Vector3.zero;
@@ -25,6 +29,7 @@ public class Arrow : MonoBehaviour
 
     private void Release(float value)
     {
+        Destroy(gameObject, arrowTimeTillDespawn);
         PullInteraction.PullActionReleased -= Release;
         gameObject.transform.parent = null;
         _inAir = true;
