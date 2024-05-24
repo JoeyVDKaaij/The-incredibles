@@ -4,8 +4,14 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class ArrowSpawner : MonoBehaviour
 {
+    [Header("Prefabs")]
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private GameObject notch;
+
+    [Space(2)]
+    [Header("Options")]
+    [SerializeField, Tooltip("The time it takes for the arrow to get spawned on the bow")] private float arrowTimeSpawn = 1f;
+
 
     private XRGrabInteractable _bow;
     private bool _arrowNotched = false;
@@ -43,7 +49,7 @@ public class ArrowSpawner : MonoBehaviour
 
     private IEnumerator DelayedSpawn()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(arrowTimeSpawn);
         _currentArrow = Instantiate(arrowPrefab, notch.transform);
     }
 }

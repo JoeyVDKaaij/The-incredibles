@@ -505,3 +505,81 @@
 [2024-05-23 01:39:19.193] [PSS] [error] [16596|16520]transport_client_tcp2.cpp:176 HandleReceiveDataResult: receive error= 10054, msg= An existing connection was forcibly closed by the remote host
 [2024-05-23 01:39:19.193] [PSS] [error] [16596|16520]transport_client_tcp2.cpp:180 HandleReceiveDataResult: has been disconnected, this= 0x260fa5b2620
 [2024-05-23 01:39:19.193] [PSS] [debug] [16596|16252]streaming_driver_interface_impl.cpp:699 HandleNetworkDisconnect: handle network disconnect,reason= 10054, this= 0x260fa4829a0
+[2024-05-23 19:09:44.936] [PSS] [info] ***********  Log Begin **********
+[2024-05-23 19:09:44.936] [PSS] [info] process id= 8016
+[2024-05-23 19:09:44.936] [PSS] [debug] [8016|23068]streaming_driver_interface_impl.cpp:25 StreamingDriverInterfaceImpl: callback= 0x26ff31d4340, this= 0x2707a3ddea0
+[2024-05-23 19:09:44.936] [PSS] [debug] [8016|23068]streaming_driver_interface_impl.cpp:95 SetTrackingOrigin: tracking origin= Undefined, this= 0x2707a3ddea0
+[2024-05-23 19:09:44.936] [PSS] [debug] [8016|23068]streaming_driver_interface_impl.cpp:39 ConnectToService: try to connect to service, this= 0x2707a3ddea0
+[2024-05-23 19:09:44.936] [PSS] [error] [8016|23228]streaming_driver_interface_impl.cpp:572 InvokeSetTrackingOrigin: "invalid media session", !media_session_, this= 0x2707a3ddea0
+[2024-05-23 19:09:44.936] [PSS] [debug] [8016|23228]streaming_driver_interface_impl.cpp:469 InvokeConnectToService: connect to service through the network, port= 54000, this= 0x2707a3ddea0
+[2024-05-23 19:09:44.936] [PSS] [debug] [8016|23228]transport_client_tcp2.cpp:34 Start: buffer size(send\recv): 1048576\1048576, this= 0x27056d533d0
+[2024-05-23 19:09:44.936] [PSS] [info] [8016|23228]transport_client_tcp2.cpp:58 Start: server= 127.0.0.1:54000, local=0.0.0.0:0, this= 0x27056d533d0
+[2024-05-23 19:09:44.936] [PSS] [debug] [8016|23228]transport_data_receiver_raw.cpp:34 UpdateConfig: enable_channel= 1, enable_packet= 1, sink= 0x27056d533e0, this= 0x2711d436870
+[2024-05-23 19:09:46.967] [PSS] [error] [8016|4664]transport_client_tcp2.cpp:106 HandleConnect: connected error= No connection could be made because the target machine actively refused it, this= 0x27056d533d0
+[2024-05-23 19:09:46.967] [PSS] [debug] [8016|4664]streaming_driver_interface_impl.cpp:248 NotifyConnectResult: network connect to service result= 10061, this= 0x2707a3ddea0
+[2024-05-23 19:09:46.967] [PSS] [error] [8016|4664]streaming_driver_interface_impl.cpp:250 NotifyConnectResult: connect to service network error= 10061, this= 0x2707a3ddea0
+[2024-05-24 11:12:25.444] [PSS] [info] ***********  Log Begin **********
+[2024-05-24 11:12:25.444] [PSS] [info] process id= 13628
+[2024-05-24 11:12:25.444] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:25 StreamingDriverInterfaceImpl: callback= 0x1e0d605fd90, this= 0x1e2aa9bd900
+[2024-05-24 11:12:25.444] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:95 SetTrackingOrigin: tracking origin= Undefined, this= 0x1e2aa9bd900
+[2024-05-24 11:12:25.444] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:39 ConnectToService: try to connect to service, this= 0x1e2aa9bd900
+[2024-05-24 11:12:25.444] [PSS] [error] [13628|17220]streaming_driver_interface_impl.cpp:572 InvokeSetTrackingOrigin: "invalid media session", !media_session_, this= 0x1e2aa9bd900
+[2024-05-24 11:12:25.445] [PSS] [debug] [13628|17220]streaming_driver_interface_impl.cpp:469 InvokeConnectToService: connect to service through the network, port= 54000, this= 0x1e2aa9bd900
+[2024-05-24 11:12:25.445] [PSS] [debug] [13628|17220]transport_client_tcp2.cpp:34 Start: buffer size(send\recv): 1048576\1048576, this= 0x1e26777bb80
+[2024-05-24 11:12:25.445] [PSS] [info] [13628|17220]transport_client_tcp2.cpp:58 Start: server= 127.0.0.1:54000, local=0.0.0.0:0, this= 0x1e26777bb80
+[2024-05-24 11:12:25.445] [PSS] [debug] [13628|17220]transport_data_receiver_raw.cpp:34 UpdateConfig: enable_channel= 1, enable_packet= 1, sink= 0x1e26777bb90, this= 0x1e0d5975840
+[2024-05-24 11:12:27.485] [PSS] [error] [13628|4684]transport_client_tcp2.cpp:106 HandleConnect: connected error= No connection could be made because the target machine actively refused it, this= 0x1e26777bb80
+[2024-05-24 11:12:27.485] [PSS] [debug] [13628|4684]streaming_driver_interface_impl.cpp:248 NotifyConnectResult: network connect to service result= 10061, this= 0x1e2aa9bd900
+[2024-05-24 11:12:27.485] [PSS] [error] [13628|4684]streaming_driver_interface_impl.cpp:250 NotifyConnectResult: connect to service network error= 10061, this= 0x1e2aa9bd900
+[2024-05-24 11:13:17.855] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:25 StreamingDriverInterfaceImpl: callback= 0x1e25a1703b0, this= 0x1e259934d00
+[2024-05-24 11:13:17.855] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:30 ~StreamingDriverInterfaceImpl: called, this= 0x1e2aa9bd900
+[2024-05-24 11:13:17.855] [PSS] [debug] [13628|18968]transport_client_tcp2.cpp:71 Stop: called, this= 0x1e26777bb80
+[2024-05-24 11:13:17.855] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:95 SetTrackingOrigin: tracking origin= StageLevel, this= 0x1e259934d00
+[2024-05-24 11:13:17.855] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:39 ConnectToService: try to connect to service, this= 0x1e259934d00
+[2024-05-24 11:13:17.855] [PSS] [error] [13628|4104]streaming_driver_interface_impl.cpp:572 InvokeSetTrackingOrigin: "invalid media session", !media_session_, this= 0x1e259934d00
+[2024-05-24 11:13:17.856] [PSS] [debug] [13628|4104]streaming_driver_interface_impl.cpp:469 InvokeConnectToService: connect to service through the network, port= 54000, this= 0x1e259934d00
+[2024-05-24 11:13:17.856] [PSS] [debug] [13628|4104]transport_client_tcp2.cpp:34 Start: buffer size(send\recv): 1048576\1048576, this= 0x1e2554d60b0
+[2024-05-24 11:13:17.856] [PSS] [info] [13628|4104]transport_client_tcp2.cpp:58 Start: server= 127.0.0.1:54000, local=0.0.0.0:0, this= 0x1e2554d60b0
+[2024-05-24 11:13:17.856] [PSS] [debug] [13628|4104]transport_data_receiver_raw.cpp:34 UpdateConfig: enable_channel= 1, enable_packet= 1, sink= 0x1e2554d60c0, this= 0x1e231520160
+[2024-05-24 11:13:19.905] [PSS] [error] [13628|1448]transport_client_tcp2.cpp:106 HandleConnect: connected error= No connection could be made because the target machine actively refused it, this= 0x1e2554d60b0
+[2024-05-24 11:13:19.905] [PSS] [debug] [13628|1448]streaming_driver_interface_impl.cpp:248 NotifyConnectResult: network connect to service result= 10061, this= 0x1e259934d00
+[2024-05-24 11:13:19.905] [PSS] [error] [13628|1448]streaming_driver_interface_impl.cpp:250 NotifyConnectResult: connect to service network error= 10061, this= 0x1e259934d00
+[2024-05-24 11:13:35.229] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:25 StreamingDriverInterfaceImpl: callback= 0x1e259e56fd0, this= 0x1e0d6ba1060
+[2024-05-24 11:13:35.229] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:30 ~StreamingDriverInterfaceImpl: called, this= 0x1e259934d00
+[2024-05-24 11:13:35.229] [PSS] [debug] [13628|18968]transport_client_tcp2.cpp:71 Stop: called, this= 0x1e2554d60b0
+[2024-05-24 11:13:35.229] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:95 SetTrackingOrigin: tracking origin= StageLevel, this= 0x1e0d6ba1060
+[2024-05-24 11:13:35.229] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:39 ConnectToService: try to connect to service, this= 0x1e0d6ba1060
+[2024-05-24 11:13:35.229] [PSS] [error] [13628|25168]streaming_driver_interface_impl.cpp:572 InvokeSetTrackingOrigin: "invalid media session", !media_session_, this= 0x1e0d6ba1060
+[2024-05-24 11:13:35.229] [PSS] [debug] [13628|25168]streaming_driver_interface_impl.cpp:469 InvokeConnectToService: connect to service through the network, port= 54000, this= 0x1e0d6ba1060
+[2024-05-24 11:13:35.229] [PSS] [debug] [13628|25168]transport_client_tcp2.cpp:34 Start: buffer size(send\recv): 1048576\1048576, this= 0x1e267cd74d0
+[2024-05-24 11:13:35.229] [PSS] [info] [13628|25168]transport_client_tcp2.cpp:58 Start: server= 127.0.0.1:54000, local=0.0.0.0:0, this= 0x1e267cd74d0
+[2024-05-24 11:13:35.229] [PSS] [debug] [13628|25168]transport_data_receiver_raw.cpp:34 UpdateConfig: enable_channel= 1, enable_packet= 1, sink= 0x1e267cd74e0, this= 0x1e0cbbed0c0
+[2024-05-24 11:13:37.250] [PSS] [error] [13628|11156]transport_client_tcp2.cpp:106 HandleConnect: connected error= No connection could be made because the target machine actively refused it, this= 0x1e267cd74d0
+[2024-05-24 11:13:37.251] [PSS] [debug] [13628|11156]streaming_driver_interface_impl.cpp:248 NotifyConnectResult: network connect to service result= 10061, this= 0x1e0d6ba1060
+[2024-05-24 11:13:37.251] [PSS] [error] [13628|11156]streaming_driver_interface_impl.cpp:250 NotifyConnectResult: connect to service network error= 10061, this= 0x1e0d6ba1060
+[2024-05-24 11:16:21.336] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:25 StreamingDriverInterfaceImpl: callback= 0x1e2679215a0, this= 0x1e0d75ce020
+[2024-05-24 11:16:21.336] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:30 ~StreamingDriverInterfaceImpl: called, this= 0x1e0d6ba1060
+[2024-05-24 11:16:21.336] [PSS] [debug] [13628|18968]transport_client_tcp2.cpp:71 Stop: called, this= 0x1e267cd74d0
+[2024-05-24 11:16:21.337] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:95 SetTrackingOrigin: tracking origin= StageLevel, this= 0x1e0d75ce020
+[2024-05-24 11:16:21.337] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:39 ConnectToService: try to connect to service, this= 0x1e0d75ce020
+[2024-05-24 11:16:21.337] [PSS] [error] [13628|24696]streaming_driver_interface_impl.cpp:572 InvokeSetTrackingOrigin: "invalid media session", !media_session_, this= 0x1e0d75ce020
+[2024-05-24 11:16:21.337] [PSS] [debug] [13628|24696]streaming_driver_interface_impl.cpp:469 InvokeConnectToService: connect to service through the network, port= 54000, this= 0x1e0d75ce020
+[2024-05-24 11:16:21.337] [PSS] [debug] [13628|24696]transport_client_tcp2.cpp:34 Start: buffer size(send\recv): 1048576\1048576, this= 0x1e1c144b200
+[2024-05-24 11:16:21.337] [PSS] [info] [13628|24696]transport_client_tcp2.cpp:58 Start: server= 127.0.0.1:54000, local=0.0.0.0:0, this= 0x1e1c144b200
+[2024-05-24 11:16:21.337] [PSS] [debug] [13628|24696]transport_data_receiver_raw.cpp:34 UpdateConfig: enable_channel= 1, enable_packet= 1, sink= 0x1e1c144b210, this= 0x1e231520940
+[2024-05-24 11:16:23.377] [PSS] [error] [13628|24220]transport_client_tcp2.cpp:106 HandleConnect: connected error= No connection could be made because the target machine actively refused it, this= 0x1e1c144b200
+[2024-05-24 11:16:23.377] [PSS] [debug] [13628|24220]streaming_driver_interface_impl.cpp:248 NotifyConnectResult: network connect to service result= 10061, this= 0x1e0d75ce020
+[2024-05-24 11:16:23.377] [PSS] [error] [13628|24220]streaming_driver_interface_impl.cpp:250 NotifyConnectResult: connect to service network error= 10061, this= 0x1e0d75ce020
+[2024-05-24 11:21:35.775] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:25 StreamingDriverInterfaceImpl: callback= 0x1e18099a4b0, this= 0x1e0d4154790
+[2024-05-24 11:21:35.775] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:30 ~StreamingDriverInterfaceImpl: called, this= 0x1e0d75ce020
+[2024-05-24 11:21:35.775] [PSS] [debug] [13628|18968]transport_client_tcp2.cpp:71 Stop: called, this= 0x1e1c144b200
+[2024-05-24 11:21:35.775] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:95 SetTrackingOrigin: tracking origin= StageLevel, this= 0x1e0d4154790
+[2024-05-24 11:21:35.775] [PSS] [debug] [13628|18968]streaming_driver_interface_impl.cpp:39 ConnectToService: try to connect to service, this= 0x1e0d4154790
+[2024-05-24 11:21:35.775] [PSS] [error] [13628|8528]streaming_driver_interface_impl.cpp:572 InvokeSetTrackingOrigin: "invalid media session", !media_session_, this= 0x1e0d4154790
+[2024-05-24 11:21:35.775] [PSS] [debug] [13628|8528]streaming_driver_interface_impl.cpp:469 InvokeConnectToService: connect to service through the network, port= 54000, this= 0x1e0d4154790
+[2024-05-24 11:21:35.775] [PSS] [debug] [13628|8528]transport_client_tcp2.cpp:34 Start: buffer size(send\recv): 1048576\1048576, this= 0x1e267799180
+[2024-05-24 11:21:35.775] [PSS] [info] [13628|8528]transport_client_tcp2.cpp:58 Start: server= 127.0.0.1:54000, local=0.0.0.0:0, this= 0x1e267799180
+[2024-05-24 11:21:35.775] [PSS] [debug] [13628|8528]transport_data_receiver_raw.cpp:34 UpdateConfig: enable_channel= 1, enable_packet= 1, sink= 0x1e267799190, this= 0x1e0d764b090
+[2024-05-24 11:21:37.807] [PSS] [error] [13628|15988]transport_client_tcp2.cpp:106 HandleConnect: connected error= No connection could be made because the target machine actively refused it, this= 0x1e267799180
+[2024-05-24 11:21:37.807] [PSS] [debug] [13628|15988]streaming_driver_interface_impl.cpp:248 NotifyConnectResult: network connect to service result= 10061, this= 0x1e0d4154790
+[2024-05-24 11:21:37.807] [PSS] [error] [13628|15988]streaming_driver_interface_impl.cpp:250 NotifyConnectResult: connect to service network error= 10061, this= 0x1e0d4154790
