@@ -22,6 +22,8 @@ public class ResetPlayer : MonoBehaviour
         {
             Debug.Log("Player has died");
             transform.position = initialTransform.position;
+            transform.rotation = initialTransform.rotation;
+            transform.localScale = initialTransform.localScale;
         }
     }
 }
