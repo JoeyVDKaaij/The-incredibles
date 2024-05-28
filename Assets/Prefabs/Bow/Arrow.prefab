@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1769337597633466026}
   - component: {fileID: 9018488776301491061}
   - component: {fileID: 3708325459306104032}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,6 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 10
   tip: {fileID: 1769337598482281036}
+  arrowTimeTillDespawn: 5
 --- !u!1 &1769337598482281027
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +86,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1769337598482281036}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,6 +179,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9adcc415b5da0ed4798af128fa47dcd3, type: 3}
       propertyPath: m_Name
       value: Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9adcc415b5da0ed4798af128fa47dcd3, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
