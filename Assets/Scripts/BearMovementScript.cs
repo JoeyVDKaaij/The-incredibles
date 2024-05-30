@@ -1,7 +1,5 @@
-using System.Collections;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.AI;
 
 [System.Serializable]
 public class Waypoint
