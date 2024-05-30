@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
 
     private float _timeLeft = 0;
 
+    public bool gameOver { get; private set; }
+    
     private void OnEnable()
     {
         if (instance == null)
