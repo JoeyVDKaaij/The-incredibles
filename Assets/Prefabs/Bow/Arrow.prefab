@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4d60f971e4f2943bc8e3c4c5553f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 20
   tip: {fileID: 1769337598482281036}
   arrowTimeTillDespawn: 5
 --- !u!1 &1769337598482281027
