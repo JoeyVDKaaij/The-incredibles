@@ -414,13 +414,10 @@ MonoBehaviour:
   waypoints:
   - position: {x: 0, y: 0, z: 0}
     timeUntilReturnMoving: 0
-    movementSpeedMultiplier: 1
-  - position: {x: 10, y: 0, z: 0}
+    movementSpeedMultiplier: 0
+  - position: {x: 2.6, y: 0, z: 0}
     timeUntilReturnMoving: 0
-    movementSpeedMultiplier: 1
-  - position: {x: 10, y: 0, z: 6.22}
-    timeUntilReturnMoving: 0
-    movementSpeedMultiplier: 1
+    movementSpeedMultiplier: 0
   loopWaypoints: 0
 --- !u!65 &1778886731
 BoxCollider:

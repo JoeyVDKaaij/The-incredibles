@@ -44,16 +44,6 @@ public class BearMovementScript : MonoBehaviour
     {
         for (int i = 0; i < waypoints.Length; i++)
         {
-            Color previousContentColor = GUI.contentColor;
-            GUI.contentColor = Color.black;
-
-            Handles.color = Color.gray;
-
-            Handles.color = Color.black;
-            Handles.Label(transform.localPosition + waypoints[i].position, (i).ToString());
-
-            GUI.contentColor = previousContentColor;
-
             Gizmos.color = Color.yellow;
             if (i + 1 < waypoints.Length && waypoints.Length > 1)
                 Gizmos.DrawLine(transform.localPosition + waypoints[i].position, transform.localPosition + waypoints[i + 1].position);
@@ -110,5 +100,15 @@ public class BearMovementScript : MonoBehaviour
                 }
             }
         }
+    }
+
+    public Waypoint[] Waypoint
+    {
+        get { return waypoints; }
+    }
+
+    public bool WaypointLoop
+    {
+        get { return loopWaypoints; }
     }
 }
