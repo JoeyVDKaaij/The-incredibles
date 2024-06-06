@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -430,6 +430,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BridgeCreation
       objectReference: {fileID: 0}
+    - target: {fileID: 8222316670235175106, guid: addb57e0a9ae46848b72f9aa7709fa1b, type: 3}
+      propertyPath: plankGameObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 4276290133420056460, guid: d8c979fce026e424e90c08148b27a668, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
