@@ -430,18 +430,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BridgeCreation
       objectReference: {fileID: 0}
-    - target: {fileID: 8222316670235175106, guid: addb57e0a9ae46848b72f9aa7709fa1b, type: 3}
-      propertyPath: plankGameObjects.Array.data[0]
-      value: 
-      objectReference: {fileID: 4276290133420056460, guid: d8c979fce026e424e90c08148b27a668, type: 3}
-    - target: {fileID: 9102837828932424758, guid: addb57e0a9ae46848b72f9aa7709fa1b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 237.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9102837828932424758, guid: addb57e0a9ae46848b72f9aa7709fa1b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 107.46
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

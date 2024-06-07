@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -1241370829262148631}
   - component: {fileID: 2909087090269595577}
   - component: {fileID: 4658879043172891980}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plank 9(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,9 +28,9 @@ Transform:
   m_GameObject: {fileID: 4276290133420056460}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.25, z: 3}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.264, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.125, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1474641161599064212}
   - {fileID: 7780262909280907068}
@@ -96,11 +96,11 @@ HingeJoint:
   m_Anchor: {x: -0.5, y: 0.5, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.5, y: 0.5, z: 0}
+  m_ConnectedAnchor: {x: -0.5, y: 0.125, z: 0}
   serializedVersion: 2
-  m_UseSpring: 0
+  m_UseSpring: 1
   m_Spring:
-    spring: 0
+    spring: 2
     damper: 0
     targetPosition: 0
   m_UseMotor: 0
@@ -110,7 +110,7 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 0
   m_ExtendedLimits: 0
-  m_UseAcceleration: 0
+  m_UseAcceleration: 1
   m_Limits:
     min: 0
     max: 0
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 7780262909280907068}
   - component: {fileID: 5624315176930044746}
   - component: {fileID: 7117234137335910870}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 5a8f0d43eee53d94e863b1c498e2c1a1, type: 3}
+  - {fileID: 2100000, guid: 256e26fcb20baa043a0af9b033358281, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 1474641161599064212}
   - component: {fileID: 2337299869844983435}
   - component: {fileID: 4083220899274596607}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 5a8f0d43eee53d94e863b1c498e2c1a1, type: 3}
+  - {fileID: 2100000, guid: 256e26fcb20baa043a0af9b033358281, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
