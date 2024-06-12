@@ -98,7 +98,7 @@ HingeJoint:
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: -0.5, y: 0.125, z: 0}
   serializedVersion: 2
-  m_UseSpring: 1
+  m_UseSpring: 0
   m_Spring:
     spring: 2
     damper: 0
@@ -110,17 +110,17 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 0
   m_ExtendedLimits: 0
-  m_UseAcceleration: 1
+  m_UseAcceleration: 0
   m_Limits:
     min: 0
-    max: 0
+    max: 10
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 1
-  m_EnablePreprocessing: 1
+  m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!1 &8505555018238205029

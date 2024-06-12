@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class ResetPlayerPosition : MonoBehaviour
 {
-    private Transform playerInitialPosition;
+    private Vector3 playerInitialPosition;
 
     private void Awake()
     {
-        Debug.Log($"Player initial position: {gameObject.transform.position}");
-        playerInitialPosition = gameObject.transform;
+        playerInitialPosition = gameObject.transform.position;
+        Debug.Log($"Player initial position: {playerInitialPosition}");
     }
 
     private void Update()
@@ -15,7 +15,7 @@ public class ResetPlayerPosition : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             Debug.Log("Resetting player position....");
-            gameObject.transform.position = playerInitialPosition.position;
+            gameObject.transform.position = playerInitialPosition;
         }
     }
 }

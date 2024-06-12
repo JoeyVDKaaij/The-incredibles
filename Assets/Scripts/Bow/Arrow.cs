@@ -74,6 +74,10 @@ public class Arrow : MonoBehaviour
                     transform.parent = hitInfo.transform;
                     body.AddForce(_rigidbody.velocity, ForceMode.Impulse);
                 }
+                if(hitInfo.transform.gameObject.layer == 12)
+                {
+                    hitInfo.transform.GetComponent<Joint>().breakForce = 0;
+                }
                 Stop();
             }
         }
