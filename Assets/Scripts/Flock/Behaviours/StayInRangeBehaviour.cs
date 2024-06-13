@@ -12,10 +12,10 @@ public class StayInRangeBehaviour : FlockBehavior
         Vector3 centerOffset = flock.transform.position - agent.transform.position;
         float t = centerOffset.magnitude / radius;
 
-        if(t < 0.9f)
-        {
-            return Vector3.zero;
-        }
+        //if(t < 0.9f)
+        //{
+        //    return Vector3.zero;
+        //}
 
         return centerOffset * t * t;
     }

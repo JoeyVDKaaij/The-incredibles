@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9222880652297176161}
   - component: {fileID: 5862712908664856177}
   - component: {fileID: 6149215505065987558}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Danger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 8170724783241534271}
   - component: {fileID: 1288429195536372019}
   - component: {fileID: 3428005717579710747}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Do not cross
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6121516976918466919}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Baricade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 2260752078806465266}
   - component: {fileID: 2947867751295735355}
   - component: {fileID: 6642294011345212628}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Keep out
   m_TagString: Untagged
   m_Icon: {fileID: 0}

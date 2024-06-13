@@ -1099,7 +1099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 906852a501d590a45bea70ae16caf49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentPrefab: {fileID: 5477023410690198661, guid: 20a473818d0d5e045ac8d390077719e2, type: 3}
+  agentPrefab: {fileID: 5477023410690198661, guid: 897696ef0fc84f642872abcecc1207f3, type: 3}
   behavior: {fileID: 11400000, guid: 2e8cbd0811db42347b60c8895e13146d, type: 2}
   startingCount: 100
   driveFactor: 10
@@ -1133,7 +1133,7 @@ GameObject:
   - component: {fileID: 831474654603180931}
   - component: {fileID: 4515392939593978892}
   m_Layer: 0
-  m_Name: FlockBlue
+  m_Name: FlockBat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
