@@ -3207,6 +3207,10 @@ PrefabInstance:
       propertyPath: m_RayOriginTransform
       value: 
       objectReference: {fileID: 3325932660928545193}
+    - target: {fileID: 9168142743249570444, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_MoveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5045211221932542186, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
     - {fileID: 3414492871629994245, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
@@ -5068,7 +5072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8429981633443581377, guid: 1670dca8ee98f864eb412b51a24c08e1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8429981633443581380, guid: 1670dca8ee98f864eb412b51a24c08e1, type: 3}
       propertyPath: m_RenderingLayerMask

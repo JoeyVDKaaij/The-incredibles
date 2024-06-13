@@ -66,13 +66,17 @@ public class Arrow : MonoBehaviour
     {
         if(Physics.Linecast(_lastPosition, tip.position, out RaycastHit hitInfo))
         {
-            if(hitInfo.transform.gameObject.layer != 8 && hitInfo.transform.gameObject.layer != 10) // IGNORE the body of the player
+            if(hitInfo.transform.gameObject.layer != 8 && hitInfo.transform.gameObject.layer != 11) // IGNORE the body of the player
             {
                 if(hitInfo.transform.TryGetComponent(out Rigidbody body))
                 {
                     _rigidbody.interpolation = RigidbodyInterpolation.None;
                     transform.parent = hitInfo.transform;
                     body.AddForce(_rigidbody.velocity, ForceMode.Impulse);
+                }
+                if(hitInfo.transform.gameObject.layer == 12)
+                {
+                    hitInfo.transform.GetComponent<Joint>().breakForce = 0;
                 }
                 Stop();
             }
