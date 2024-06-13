@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 1990450028}
   - component: {fileID: 1990450027}
   - component: {fileID: 1990450026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plank
   m_TagString: Untagged
   m_Icon: {fileID: 0}

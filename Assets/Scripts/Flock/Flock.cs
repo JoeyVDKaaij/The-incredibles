@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Flock : MonoBehaviour
 {
     [SerializeField] private FlockAgent agentPrefab;
     List<FlockAgent> agents = new List<FlockAgent>();
     [SerializeField] private FlockBehavior behavior;
+    
+    private AudioSource audioSource;
 
     [Range(10, 500)]
     [SerializeField] private int startingCount = 250;
@@ -27,6 +30,16 @@ public class Flock : MonoBehaviour
 
     public float SquareAvoidanceRadius { get { return squareAvoidanceRadius; } }
 
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+
+        //Setup the Audio Source
+        audioSource.playOnAwake = false;
+        audioSource.loop = true;
+        audioSource.spatialBlend = 1f;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +59,10 @@ public class Flock : MonoBehaviour
             newAgent.Initialize(this);
             agents.Add(newAgent);
 
+        }
+        if(audioSource.clip != null)
+        {
+            audioSource.Play();
         }
     }
 
