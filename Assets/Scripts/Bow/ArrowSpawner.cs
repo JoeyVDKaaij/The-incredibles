@@ -37,6 +37,7 @@ public class ArrowSpawner : MonoBehaviour
         }
         if(!_bow.isSelected && _currentArrow != null)
         {
+            _arrowNotched = false;
             Destroy(_currentArrow);
         }
     }

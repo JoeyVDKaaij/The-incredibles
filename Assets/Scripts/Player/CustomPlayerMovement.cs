@@ -3,7 +3,7 @@ using UnityEngine.XR;
 
 public class CustomPlayerMovement : MonoBehaviour
 {
-    [SerializeField] private CharacterController characterController;
+    [SerializeField] private CharacterController characterController; // Reference to the CharacterController component
     [SerializeField] private Transform vrHead; // Reference to the VR headset transform
 
     [Header("Settings")]
@@ -18,13 +18,14 @@ public class CustomPlayerMovement : MonoBehaviour
         CheckHeadCollision();
     }
 
+    //DEBUG
     private void OnDrawGizmosSelected()
     {
         // Draw a sphere at the VR headset's position
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(vrHead.position, headRadius);
 
-        if (Physics.Raycast(vrHead.position, vrHead.forward, out RaycastHit hit, headRadius, collisionMask))
+        if (Physics.Raycast(vrHead.position, vrHead.InverseTransformDirection(vrHead.forward), out RaycastHit hit, headRadius, collisionMask))
         {
             Gizmos.color = Color.red;
             Gizmos.DrawLine(vrHead.position, hit.point);
@@ -38,11 +39,10 @@ public class CustomPlayerMovement : MonoBehaviour
         // Perform a spherecast from the VR headset's position
         if (Physics.SphereCast(vrHead.position, headRadius, vrHead.forward, out RaycastHit hit, headRadius, collisionMask))
         {
-            // Collision detected, push back
             Debug.Log("Head collision detected with " + hit.collider.name);
 
             // Calculate push back direction
-            Vector3 pushBackDirection = -vrHead.forward * collisionPushBackForce;
+            Vector3 pushBackDirection = -vrHead.InverseTransformDirection(vrHead.forward) * collisionPushBackForce;
 
             // Apply the push back
             transform.Translate(pushBackDirection);
