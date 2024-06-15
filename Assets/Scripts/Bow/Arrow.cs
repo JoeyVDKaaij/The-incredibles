@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
-public class Arrow : MonoBehaviour
+public class Arrow : XRGrabInteractable
 {
     [SerializeField] private float _speed = 10f;
     [SerializeField] private Transform tip;
@@ -14,16 +15,18 @@ public class Arrow : MonoBehaviour
     private bool _inAir = false;
     private Vector3 _lastPosition = Vector3.zero;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _rigidbody = GetComponent<Rigidbody>();
         PullInteraction.PullActionReleased += Release;
 
         Stop();
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
+        base.OnDestroy();
         PullInteraction.PullActionReleased -= Release;
     }
 
