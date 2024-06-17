@@ -24,12 +24,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556666940592120865}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.231}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0120440135}
+  m_LocalScale: {x: 1, y: 1, z: 0.03948857}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1769337597633466026}
+  m_Father: {fileID: 296237346132574781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1769337597633466025
 GameObject:
@@ -63,8 +63,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 296237346132574781}
-  - {fileID: 1769337598482281036}
-  - {fileID: 512595673767537084}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &9018488776301491061
@@ -113,7 +111,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -247,7 +245,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  _speed: 20
+  _speed: 25
   tip: {fileID: 1769337598482281036}
   arrowTimeTillDespawn: 5
 --- !u!1 &1769337598482281027
@@ -274,12 +272,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769337598482281027}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.3014}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.01594}
+  m_LocalScale: {x: 1, y: 1, z: 0.03948857}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1769337597633466026}
+  m_Father: {fileID: 296237346132574781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &258617463687783894
 PrefabInstance:
@@ -303,7 +301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9adcc415b5da0ed4798af128fa47dcd3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 20.000002
+      value: 39.18931
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9adcc415b5da0ed4798af128fa47dcd3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -311,11 +309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9adcc415b5da0ed4798af128fa47dcd3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9adcc415b5da0ed4798af128fa47dcd3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.1995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9adcc415b5da0ed4798af128fa47dcd3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -347,7 +345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9adcc415b5da0ed4798af128fa47dcd3, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9adcc415b5da0ed4798af128fa47dcd3, type: 3}
       propertyPath: m_Name
@@ -359,7 +357,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9adcc415b5da0ed4798af128fa47dcd3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1769337598482281036}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9adcc415b5da0ed4798af128fa47dcd3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 512595673767537084}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9adcc415b5da0ed4798af128fa47dcd3, type: 3}
       insertIndex: -1

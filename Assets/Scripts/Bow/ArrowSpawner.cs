@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -6,6 +7,7 @@ public class ArrowSpawner : MonoBehaviour
 {
     [Header("Prefabs")]
     [SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private Transform arrowPrefabSpawn;
     [SerializeField] private GameObject notch;
 
     [Space(2)]
@@ -52,5 +54,6 @@ public class ArrowSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(arrowTimeSpawn);
         _currentArrow = Instantiate(arrowPrefab, notch.transform);
+        _currentArrow.transform.localPosition += new Vector3(0, 0, 0.242f);
     }
 }

@@ -155,4 +155,14 @@ public class PullInteraction : XRBaseInteractable
     {
         _audioSource.Play();
     }
+
+    ///DEBUG
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Debug.Log("Pressed the RELEASE DEBUG KEY");
+            PullActionReleased?.Invoke(10f);
+        }
+    }
 }
