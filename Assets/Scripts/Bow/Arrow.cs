@@ -14,6 +14,7 @@ public class Arrow : XRGrabInteractable
     private Rigidbody _rigidbody;
     private bool _inAir = false;
     private Vector3 _lastPosition = Vector3.zero;
+    private bool arrowNotched = false;
 
     protected override void Awake()
     {
@@ -30,19 +31,28 @@ public class Arrow : XRGrabInteractable
         PullInteraction.PullActionReleased -= Release;
     }
 
+    public void Notch()
+    {
+        arrowNotched = true;
+    }
+
     private void Release(float value)
     {
-        Destroy(gameObject, arrowTimeTillDespawn);
-        PullInteraction.PullActionReleased -= Release;
-        gameObject.transform.parent = null;
-        _inAir = true;
-        SetPhysics(true);
+        if (arrowNotched)
+        {
+            Destroy(gameObject, arrowTimeTillDespawn);
+            PullInteraction.PullActionReleased -= Release;
+            gameObject.transform.parent = null;
+            _inAir = true;
+            SetPhysics(true);
 
-        Vector3 force = transform.forward * value * _speed;
-        _rigidbody.AddForce(force,ForceMode.Impulse);
+            Vector3 force = transform.forward * value * _speed;
+            _rigidbody.AddForce(force, ForceMode.Impulse);
 
-        StartCoroutine(RotateWithVelocity());
-        _lastPosition = tip.position;
+            StartCoroutine(RotateWithVelocity());
+            _lastPosition = tip.position;
+            arrowNotched = false;
+        }
     }
 
     private IEnumerator RotateWithVelocity()

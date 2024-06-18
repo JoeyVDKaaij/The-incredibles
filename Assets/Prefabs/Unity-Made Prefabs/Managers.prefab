@@ -123,6 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ccf1bd34dee9314e889c094d223341c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeMusic: 1
-  volumeSFX: 1
+  volumeMusic: 0.46
+  volumeSFX: 0.225
   scareSound: {fileID: 0}

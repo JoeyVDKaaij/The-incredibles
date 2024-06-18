@@ -17,6 +17,16 @@ public class Notch : XRSocketInteractor
         base.OnDestroy();
     }
 
+    protected override void OnSelectEntered(SelectEnterEventArgs args)
+    {
+        if(args.interactableObject is Arrow arrow)
+        {
+            Debug.Log("Arrow selected");
+            arrow.Notch();
+            arrow.colliders[0].enabled = false;
+        }
+    }
+
     private void OnArrowReleased(float pullAmount)
     {
         // Force the notch to release the arrow using the new XR Interaction Toolkit methods
