@@ -84,10 +84,10 @@ public class Arrow : XRGrabInteractable
                 if(hitInfo.transform.TryGetComponent(out Rigidbody body))
                 {
                     _rigidbody.interpolation = RigidbodyInterpolation.None;
-                    transform.parent = hitInfo.transform;
+                    transform.SetParent(hitInfo.collider.transform);
                     body.AddForce(_rigidbody.velocity, ForceMode.Impulse);
                 }
-                if(hitInfo.transform.gameObject.layer == 12)
+                if(hitInfo.transform.gameObject.layer == 12) // EQUIVALENT: LayerMask.GetMask("Rope")
                 {
                     hitInfo.transform.GetComponent<Joint>().breakForce = 0;
                 }

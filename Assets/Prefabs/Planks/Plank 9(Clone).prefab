@@ -299,7 +299,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4276290133420056460}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -315,7 +315,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!59 &4658879043172891980
@@ -349,7 +349,7 @@ HingeJoint:
     min: -36.87
     max: -7.5
     bounciness: 0.06
-    bounceMinVelocity: 8.17
+    bounceMinVelocity: 10
     contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
