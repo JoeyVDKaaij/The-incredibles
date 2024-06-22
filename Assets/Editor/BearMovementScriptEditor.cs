@@ -14,11 +14,10 @@ public class BearMovementScriptEditor : Editor
         for (int i = 0; i < t.Waypoint.Length; i++)
         {
             GUI.contentColor = Color.black;
-            
-            Handles.color = Color.gray;
 
             Handles.color = Color.black;
-            Handles.Label(t.transform.localPosition + t.Waypoint[i].position, (i).ToString());
+            
+            Handles.Label((Application.isPlaying?t.placedPosition:t.transform.position) + t.Waypoint[i].position, (i).ToString());
         }
     }
 }
