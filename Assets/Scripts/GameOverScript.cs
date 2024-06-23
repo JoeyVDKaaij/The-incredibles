@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -9,6 +10,8 @@ public class GameOverScript : MonoBehaviour
     [Header("Game Over Settings")] 
     [SerializeField, Tooltip("Start Game Over sequence by pressing space.")]
     private bool debugStartGameOver = false;
+    [SerializeField, Tooltip("Start Game Over sequence by collisions.")]
+    private bool startGameOverByCollision = false;
     
 
     private PlayableDirector _gameOverAnimation;
@@ -39,5 +42,13 @@ public class GameOverScript : MonoBehaviour
             yield return null;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.transform.CompareTag("Player") && startGameOverByCollision)
+        {
+            StartGameOver();
+        }
     }
 }
