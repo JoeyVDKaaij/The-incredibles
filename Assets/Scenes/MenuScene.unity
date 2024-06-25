@@ -1965,6 +1965,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5599255996734634046}
   - component: {fileID: 5599255996734634047}
+  - component: {fileID: 5599255996734634050}
+  - component: {fileID: 5599255996734634049}
+  - component: {fileID: 5599255996734634048}
   m_Layer: 0
   m_Name: ME4Ka_mesh
   m_TagString: Untagged
@@ -2078,6 +2081,58 @@ MonoBehaviour:
     movementSpeedMultiplier: 1
   loopWaypoints: 1
   placedPosition: {x: 0, y: 0, z: 0}
+--- !u!65 &5599255996734634048
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115909978467050116}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.024490071, y: 0.03449803, z: 0.05869311}
+  m_Center: {x: -0.0000000042997037, y: 0.017022453, z: 0.0027440044}
+--- !u!114 &5599255996734634049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115909978467050116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4c81244378c0b42af97e2ab2ce4fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugStartGameOver: 0
+  startGameOverByCollision: 0
+--- !u!320 &5599255996734634050
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5115909978467050116}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 0}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &5616762289510121431
 GameObject:
   m_ObjectHideFlags: 0
