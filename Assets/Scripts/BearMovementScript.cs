@@ -1,4 +1,6 @@
+using System;
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 
 [System.Serializable]
@@ -28,6 +30,8 @@ public class BearMovementScript : MonoBehaviour
 
     public Vector3 placedPosition;
     private Vector3 OldPosition;
+
+    private Animator _animator;
     
     private void Start()
     {
@@ -46,6 +50,8 @@ public class BearMovementScript : MonoBehaviour
         _startTime = Time.time;
             
         transform.hasChanged = false;
+
+        _animator = GetComponent<Animator>();
     }
     
     private void OnDrawGizmos()
@@ -56,7 +62,7 @@ public class BearMovementScript : MonoBehaviour
             {
                 for (int i = 0; i < waypoints.Length; i++)
                 {
-                    Gizmos.color = Color.yellow;
+                    Gizmos.color = Color.magenta;
                     if (i + 1 < waypoints.Length && waypoints.Length > 1)
                         Gizmos.DrawLine(placedPosition + waypoints[i].position,
                             placedPosition + waypoints[i + 1].position);
@@ -69,13 +75,23 @@ public class BearMovementScript : MonoBehaviour
             {
                 for (int i = 0; i < waypoints.Length; i++)
                 {
-                    Gizmos.color = Color.yellow;
+                    Gizmos.color = Color.magenta;
                     if (i + 1 < waypoints.Length && waypoints.Length > 1)
-                        Gizmos.DrawLine(transform.position + waypoints[i].position,
-                            transform.position + waypoints[i + 1].position);
+                    {
+                        for (int j = 0; j < 100; j++)
+                        {
+                            Gizmos.DrawLine(transform.position + waypoints[i].position,
+                                transform.position + waypoints[i + 1].position);
+                        }
+                    }
                     else if (waypoints.Length > 2 && loopWaypoints)
-                        Gizmos.DrawLine(transform.position + waypoints[waypoints.Length - 1].position,
-                            transform.position + waypoints[0].position);
+                    {
+                        for (int j = 0; j < 100; j++)
+                        {
+                            Gizmos.DrawLine(transform.position + waypoints[waypoints.Length - 1].position,
+                                transform.position + waypoints[0].position);
+                        }
+                    }
                 }
             }
         }
@@ -95,6 +111,7 @@ public class BearMovementScript : MonoBehaviour
             if (_currentWaypoint + 1 >= waypoints.Length && !loopWaypoints)
             {
                 _startTime = Time.time;
+                _animator.SetBool("Walking", false);
                 return;
             }
 
@@ -102,8 +119,11 @@ public class BearMovementScript : MonoBehaviour
             {
                 _startTime = Time.time;
                 _timer += Time.deltaTime;
+                _animator.SetBool("Walking", false);
                 return;
             }
+            
+            _animator.SetBool("Walking", true);
             
             float distCovered = (Time.time - _startTime) * (movementSpeed * waypoints[_currentWaypoint].movementSpeedMultiplier);
 
