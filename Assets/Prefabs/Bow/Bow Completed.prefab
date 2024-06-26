@@ -776,6 +776,7 @@ GameObject:
   - component: {fileID: 1486081380}
   - component: {fileID: 2268431453032280058}
   - component: {fileID: 1016439666292401184}
+  - component: {fileID: 5854689281508220248}
   m_Layer: 0
   m_Name: Bow Completed
   m_TagString: Untagged
@@ -980,7 +981,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 0
+  m_ThrowOnDetach: 1
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -1005,6 +1006,19 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &5854689281508220248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3701202431252008202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc25f02c77ccfa4897a82203e5a47aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTime: 1
 --- !u!1001 &1592245681944432935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1075,16 +1089,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: f49798a7b92528f4ea16cc479bedd5dd, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: f49798a7b92528f4ea16cc479bedd5dd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 42c2eb07c3c27994d9c30ee5f8a3c22b, type: 2}
+      objectReference: {fileID: 2100000, guid: b7c53000c847e7e4298c997cb2221a5a, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f49798a7b92528f4ea16cc479bedd5dd, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e68fccabd87de2a48bff33745efcfe86, type: 2}
     - target: {fileID: -5754084199372789682, guid: f49798a7b92528f4ea16cc479bedd5dd, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -2274143092984155997, guid: e302be945d0d7644d99d35d463839360, type: 3}
+      objectReference: {fileID: -2274143092984155997, guid: d136a376191998f41bdf28cdaf2e5ec3, type: 3}
     - target: {fileID: 919132149155446097, guid: f49798a7b92528f4ea16cc479bedd5dd, type: 3}
       propertyPath: m_Name
       value: BowMesh
