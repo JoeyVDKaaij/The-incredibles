@@ -21,7 +21,7 @@ public class PlankBreaking : MonoBehaviour
         childrenRigidbody = new Rigidbody[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
         {
-            childrenRigidbody[i] = transform.GetChild(i).gameObject.GetComponent<Rigidbody>();
+            childrenRigidbody[i] = transform.GetChild(i).gameObject.TryGetComponent(out Rigidbody rb) ? rb : null;
             if (childrenRigidbody[i] == null)
             {
                 Debug.LogError("Rigidbody not found on child object. Please make sure to add a RigidBody on all children of this object!");

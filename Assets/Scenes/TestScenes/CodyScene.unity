@@ -15513,11 +15513,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9008461865543561412, guid: f36810f37bf4b0540a371dff3ea3a188, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.688
+      value: 1.16
       objectReference: {fileID: 0}
     - target: {fileID: 9008461865543561412, guid: f36810f37bf4b0540a371dff3ea3a188, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.68
+      value: -5.32
       objectReference: {fileID: 0}
     - target: {fileID: 9008461865543561412, guid: f36810f37bf4b0540a371dff3ea3a188, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17416,6 +17416,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4527967853069244275, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: bowPrefab
+      value: 
+      objectReference: {fileID: 2108974967}
     - target: {fileID: 7313654230448209575, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Name
       value: XR Interaction Setup
@@ -21854,6 +21858,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2108974967 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3701202431252008202, guid: f36810f37bf4b0540a371dff3ea3a188, type: 3}
+  m_PrefabInstance: {fileID: 1598543025}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2133038320
 GameObject:
   m_ObjectHideFlags: 0
@@ -22081,7 +22090,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6910678731779011284, guid: e4aae55e983291c429026c8419ffa25e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.3773331
+      value: 2.77
       objectReference: {fileID: 0}
     - target: {fileID: 6910678731779011284, guid: e4aae55e983291c429026c8419ffa25e, type: 3}
       propertyPath: m_LocalPosition.y
