@@ -1,6 +1,5 @@
 using System;
 using UnityEditor;
-using UnityEditor.Animations;
 using UnityEngine;
 
 [System.Serializable]
@@ -124,6 +123,13 @@ public class BearMovementScript : MonoBehaviour
             }
             
             _animator.SetBool("Walking", true);
+            
+            Quaternion newRotation;
+            if (_currentWaypoint+1 >= waypoints.Length)
+                newRotation = Quaternion.LookRotation(waypoints[0].position - waypoints[_currentWaypoint].position, transform.up);
+            else
+                newRotation = Quaternion.LookRotation(waypoints[_currentWaypoint+1].position - waypoints[_currentWaypoint].position, transform.up);
+            transform.rotation = newRotation;
             
             float distCovered = (Time.time - _startTime) * (movementSpeed * waypoints[_currentWaypoint].movementSpeedMultiplier);
 
