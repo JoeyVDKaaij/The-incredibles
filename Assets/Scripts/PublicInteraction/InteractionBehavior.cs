@@ -6,10 +6,14 @@ public abstract class InteractionBehavior : ScriptableObject
     protected Transform player;
     [SerializeField] protected KeyCode interactionKey;
 
+
     //Put this in the update loop in a MonoBehavior
-    public void TryInteract()
+    public void TryInteract(bool needsToPressInteract = true)
     {
-        if(Input.GetKeyDown(interactionKey))
+        if(needsToPressInteract && Input.GetKeyDown(interactionKey))
+        {
+            DoAction();
+        }else if(!needsToPressInteract)
         {
             DoAction();
         }
@@ -19,6 +23,7 @@ public abstract class InteractionBehavior : ScriptableObject
     {
         this.player = player;
     }
+
 
     protected abstract void DoAction();
 }

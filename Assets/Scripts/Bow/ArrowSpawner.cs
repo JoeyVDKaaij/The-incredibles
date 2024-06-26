@@ -1,8 +1,8 @@
 using System.Collections;
-using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+[System.Obsolete]
 public class ArrowSpawner : MonoBehaviour
 {
     [Header("Prefabs")]

@@ -20,16 +20,19 @@ public class Arrow : XRGrabInteractable
     {
         base.Awake();
         _rigidbody = GetComponent<Rigidbody>();
+        //selectExited.AddListener((args) => { Release(0); });
         PullInteraction.PullActionReleased += Release;
 
-        Stop();
+        //Stop();
     }
 
     protected override void OnDestroy()
     {
         base.OnDestroy();
+        //selectExited.RemoveListener((args) => { Release(0); });
         PullInteraction.PullActionReleased -= Release;
     }
+
 
     public void Notch()
     {
@@ -40,7 +43,6 @@ public class Arrow : XRGrabInteractable
     {
         if (arrowNotched)
         {
-            Destroy(gameObject, arrowTimeTillDespawn);
             PullInteraction.PullActionReleased -= Release;
             gameObject.transform.parent = null;
             _inAir = true;
@@ -53,6 +55,7 @@ public class Arrow : XRGrabInteractable
             _lastPosition = tip.position;
             arrowNotched = false;
         }
+        Destroy(gameObject, arrowTimeTillDespawn);
     }
 
     private IEnumerator RotateWithVelocity()
@@ -85,7 +88,7 @@ public class Arrow : XRGrabInteractable
                 {
                     _rigidbody.interpolation = RigidbodyInterpolation.None;
                     transform.SetParent(hitInfo.collider.transform);
-                    body.AddForce(_rigidbody.velocity, ForceMode.Impulse);
+                    //body.AddForce(_rigidbody.velocity, ForceMode.Impulse);
                 }
                 if(hitInfo.transform.gameObject.layer == 12) // EQUIVALENT: LayerMask.GetMask("Rope")
                 {
