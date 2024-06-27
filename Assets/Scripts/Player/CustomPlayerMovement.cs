@@ -39,6 +39,7 @@ public class CustomPlayerMovement : MonoBehaviour
         // Perform a spherecast from the VR headset's position
         if (Physics.SphereCast(vrHead.position, headRadius, vrHead.forward, out RaycastHit hit, headRadius, collisionMask))
         {
+            if (hit.collider.isTrigger) return;
             Debug.Log("Head collision detected with " + hit.collider.name);
 
             // Calculate push back direction
