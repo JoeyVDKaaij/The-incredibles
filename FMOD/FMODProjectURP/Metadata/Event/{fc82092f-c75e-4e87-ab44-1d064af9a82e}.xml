@@ -55,6 +55,9 @@
 		</relationship>
 	</object>
 	<object class="MixerInput" id="{66e5cdba-7701-41a9-a8a1-4ad25aed575c}">
+		<relationship name="masters">
+			<destination>{4a0e78a0-4cb1-4135-ba15-3611ed2eb86a}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{3901a92a-1efb-44c9-b96f-27779af54de2}</destination>
 		</relationship>
@@ -173,7 +176,6 @@
 		<property name="timelockedOffset">
 			<value>123.5</value>
 		</property>
-		<property name="name" />
 		<relationship name="fadeOutCurve">
 			<destination>{54c63844-6368-4de2-838d-4f739c0e9b99}</destination>
 		</relationship>
@@ -188,7 +190,6 @@
 		<property name="length">
 			<value>123.5</value>
 		</property>
-		<property name="name" />
 		<relationship name="fadeInCurve">
 			<destination>{99b89556-b10c-4853-8909-8630eaea895c}</destination>
 		</relationship>
