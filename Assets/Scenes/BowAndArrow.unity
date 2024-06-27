@@ -131,10 +131,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1507035417765548636, guid: f36810f37bf4b0540a371dff3ea3a188, type: 3}
-      propertyPath: m_InteractionManager
-      value: 
-      objectReference: {fileID: 452463680}
     - target: {fileID: 3701202431252008202, guid: f36810f37bf4b0540a371dff3ea3a188, type: 3}
       propertyPath: m_Name
       value: Bow Completed

@@ -774,8 +774,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9008461865543561412}
   - component: {fileID: 1486081380}
-  - component: {fileID: 1486081379}
-  - component: {fileID: 4825935816260068477}
+  - component: {fileID: 2268431453032280058}
+  - component: {fileID: 1016439666292401184}
+  - component: {fileID: 5854689281508220248}
   m_Layer: 0
   m_Name: Bow Completed
   m_TagString: Untagged
@@ -793,7 +794,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1266200337275942604}
@@ -812,7 +813,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3701202431252008202}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -827,11 +828,32 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1486081379
+--- !u!65 &2268431453032280058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3701202431252008202}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 164224
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.1161537, y: 0.052535053, z: 0.52851593}
+  m_Center: {x: 0.0039503206, y: 0.00000002865608, z: -0.012197082}
+--- !u!114 &1016439666292401184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -840,7 +862,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3701202431252008202}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 5dd64f0fbbd8e2549b95ab1c63266fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -850,7 +872,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 2147483649
+    m_Bits: 3
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -885,7 +907,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -948,18 +982,18 @@ MonoBehaviour:
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
-  m_SmoothPosition: 0
+  m_SmoothPosition: 1
   m_SmoothPositionAmount: 5
   m_TightenPosition: 0.5
   m_TrackRotation: 1
-  m_SmoothRotation: 0
+  m_SmoothRotation: 1
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
   m_TrackScale: 1
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 0
+  m_ThrowOnDetach: 1
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -984,22 +1018,19 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &4825935816260068477
+--- !u!114 &5854689281508220248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3701202431252008202}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5beb251fc9ec5e942b8762a0d8340351, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bc25f02c77ccfa4897a82203e5a47aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 1769337597633466025, guid: 54ba44d4ecd83324991be29cf49b127d, type: 3}
-  arrowPrefabSpawn: {fileID: 0}
-  notch: {fileID: 74269883}
-  arrowTimeSpawn: 1
+  despawnTime: 1
 --- !u!1001 &1592245681944432935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1070,16 +1101,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: f49798a7b92528f4ea16cc479bedd5dd, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: f49798a7b92528f4ea16cc479bedd5dd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 42c2eb07c3c27994d9c30ee5f8a3c22b, type: 2}
+      objectReference: {fileID: 2100000, guid: b7c53000c847e7e4298c997cb2221a5a, type: 2}
+    - target: {fileID: -7511558181221131132, guid: f49798a7b92528f4ea16cc479bedd5dd, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e68fccabd87de2a48bff33745efcfe86, type: 2}
     - target: {fileID: -5754084199372789682, guid: f49798a7b92528f4ea16cc479bedd5dd, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -2274143092984155997, guid: e302be945d0d7644d99d35d463839360, type: 3}
+      objectReference: {fileID: -2274143092984155997, guid: d136a376191998f41bdf28cdaf2e5ec3, type: 3}
     - target: {fileID: 919132149155446097, guid: f49798a7b92528f4ea16cc479bedd5dd, type: 3}
       propertyPath: m_Name
       value: BowMesh

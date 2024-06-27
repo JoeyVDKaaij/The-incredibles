@@ -6,10 +6,10 @@ public class PlankBreaking : MonoBehaviour
     [SerializeField, Tooltip("Drag in the trigger collider on this object. If none available, create and assign one")] BoxCollider triggerCollider;
     [SerializeField, Tooltip("Drag in the collider on this object. If none available, create and assign one")] BoxCollider contactCollider;
     public bool triggerColliderTriggerBool { private set; get; }
-    Rigidbody[] childrenRB;
+    Rigidbody[] childrenRigidbody;
 
     //This variable will be used to determine which plank we are currently on
-    private bool isCurrentPlank = false;
+    private bool isTouchingPlayer = false;
 
     private void OnValidate()
     {
@@ -18,18 +18,14 @@ public class PlankBreaking : MonoBehaviour
     private void Awake()
     {
         BreakPlankBehaviour.OnPlankBreak += BreakPlank;
-        childrenRB = new Rigidbody[transform.childCount];
+        childrenRigidbody = new Rigidbody[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
         {
-            childrenRB[i] = transform.GetChild(i).gameObject.GetComponent<Rigidbody>();
-            if (childrenRB[i] == null)
+            childrenRigidbody[i] = transform.GetChild(i).gameObject.TryGetComponent(out Rigidbody rb) ? rb : null;
+            if (childrenRigidbody[i] != null)
             {
-                Debug.LogError("Rigidbody not found on child object. Please make sure to add a RigidBody on all children of this object!");
-            }
-            else
-            {
-                childrenRB[i].isKinematic = true;
-                childrenRB[i].useGravity = false;
+                childrenRigidbody[i].isKinematic = true;
+                childrenRigidbody[i].useGravity = false;
             }
         }
     }
@@ -38,7 +34,7 @@ public class PlankBreaking : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            isCurrentPlank = true;
+            isTouchingPlayer = true;
         }
     }
 
@@ -46,18 +42,18 @@ public class PlankBreaking : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            isCurrentPlank = false;
+            isTouchingPlayer = false;
         }
     }
 
     private void BreakPlank()
     {
-        if (isCurrentPlank)
+        if (isTouchingPlayer)
         {
-            for(int i=0;i<childrenRB.Length; i++)
+            for(int i=0;i<childrenRigidbody.Length; ++i)
             {
-                childrenRB[i].isKinematic = false;
-                childrenRB[i].useGravity = true;
+                childrenRigidbody[i].isKinematic = false;
+                childrenRigidbody[i].useGravity = true;
             }
             contactCollider.enabled = false;
             Destroy(gameObject, 5.0f);

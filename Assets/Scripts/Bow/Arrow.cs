@@ -4,6 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Arrow : XRGrabInteractable
 {
+    public static event System.Action OnArrowHitRope;
     [SerializeField] private float _speed = 10f;
     [SerializeField] private Transform tip;
 
@@ -20,16 +21,19 @@ public class Arrow : XRGrabInteractable
     {
         base.Awake();
         _rigidbody = GetComponent<Rigidbody>();
+        //selectExited.AddListener((args) => { Release(0); });
         PullInteraction.PullActionReleased += Release;
 
-        Stop();
+        //Stop();
     }
 
     protected override void OnDestroy()
     {
         base.OnDestroy();
+        //selectExited.RemoveListener((args) => { Release(0); });
         PullInteraction.PullActionReleased -= Release;
     }
+
 
     public void Notch()
     {
@@ -40,7 +44,6 @@ public class Arrow : XRGrabInteractable
     {
         if (arrowNotched)
         {
-            Destroy(gameObject, arrowTimeTillDespawn);
             PullInteraction.PullActionReleased -= Release;
             gameObject.transform.parent = null;
             _inAir = true;
@@ -53,6 +56,7 @@ public class Arrow : XRGrabInteractable
             _lastPosition = tip.position;
             arrowNotched = false;
         }
+        Destroy(gameObject, arrowTimeTillDespawn);
     }
 
     private IEnumerator RotateWithVelocity()
@@ -84,11 +88,12 @@ public class Arrow : XRGrabInteractable
                 if(hitInfo.transform.TryGetComponent(out Rigidbody body))
                 {
                     _rigidbody.interpolation = RigidbodyInterpolation.None;
-                    transform.parent = hitInfo.transform;
-                    body.AddForce(_rigidbody.velocity, ForceMode.Impulse);
+                    transform.SetParent(hitInfo.collider.transform);
+                    body.AddForce(new Vector3(0.01f,0.01f), ForceMode.Impulse);
                 }
-                if(hitInfo.transform.gameObject.layer == 12)
+                if (hitInfo.transform.gameObject.layer == 12) // EQUIVALENT: LayerMask.GetMask("Rope")
                 {
+                    OnArrowHitRope?.Invoke();
                     hitInfo.transform.GetComponent<Joint>().breakForce = 0;
                 }
                 Stop();

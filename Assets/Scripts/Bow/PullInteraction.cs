@@ -98,16 +98,15 @@ public class PullInteraction : XRBaseInteractable
 
     private System.Collections.IEnumerator SpringBackNotch()
     {
-        // Initial velocity and position
         Vector3 currentVelocity = Vector3.zero;
         Vector3 currentMiddlePos = lineRenderer.GetPosition(1);
         Vector3 targetPosition = notchInitialPosition;
 
-        // Parameters for spring-damping system
-        float stiffness = oscillationFrequency * oscillationFrequency; // Spring stiffness
-        float damping = 2.0f * dampingRatio * oscillationFrequency;    // Damping coefficient
+        // Parameters for the spring-back system
+        float stiffness = oscillationFrequency * oscillationFrequency;
+        float damping = 2.0f * dampingRatio * oscillationFrequency;
         float mass = 1.0f;
-        float randomFactor = 0.1f; // Adjust for randomness in the release
+        float randomFactor = 0.1f; // Adds randomness to the release
 
         while (Vector3.Distance(currentMiddlePos, targetPosition) > 0.01f || currentVelocity.magnitude > 0.01f)
         {
@@ -119,7 +118,7 @@ public class PullInteraction : XRBaseInteractable
             Vector3 dampingForce = -damping * currentVelocity;
             Vector3 force = springForce + dampingForce;
 
-            // Introduce a slight randomness to the force to simulate real-world variations
+            // Introduce randomness to the force to simulate real-world variations
             force += new Vector3(
                 UnityEngine.Random.Range(-randomFactor, randomFactor),
                 UnityEngine.Random.Range(-randomFactor, randomFactor),
@@ -130,7 +129,7 @@ public class PullInteraction : XRBaseInteractable
             currentVelocity += force / mass * deltaTime;
             currentMiddlePos += currentVelocity * deltaTime;
 
-            if(currentMiddlePos.z > stringStopPosition) //ADJUST THIS VALUE IN CASE THE BOW MODEL IS DIFFERENT
+            if(currentMiddlePos.z > stringStopPosition)
             {
                 currentMiddlePos.z = stringStopPosition;
             }
