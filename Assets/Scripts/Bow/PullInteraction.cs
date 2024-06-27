@@ -1,4 +1,5 @@
 using System;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -24,13 +25,12 @@ public class PullInteraction : XRBaseInteractable
     private Vector3 notchInitialPosition;
     private Vector3[] linePositions = new Vector3[3];
 
-    private AudioSource _audioSource;
+    private EventReference arrowReleaseEvent;
 
     protected override void Awake()
     {
         base.Awake();
         lineRenderer = GetComponent<LineRenderer>();
-        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -152,7 +152,8 @@ public class PullInteraction : XRBaseInteractable
 
     private void PlayReleaseSound()
     {
-        _audioSource.Play();
+        if (!arrowReleaseEvent.IsNull)
+            RuntimeManager.PlayOneShot(arrowReleaseEvent, transform.position);
     }
 
     ///DEBUG

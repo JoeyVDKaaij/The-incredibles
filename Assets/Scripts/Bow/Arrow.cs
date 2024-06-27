@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using FMODUnity;
 
 public class Arrow : XRGrabInteractable
 {
@@ -11,6 +12,9 @@ public class Arrow : XRGrabInteractable
     [Space(2)]
     [Header("Extra settings")]
     [SerializeField] private float arrowTimeTillDespawn = 5f;
+
+    [SerializeField]
+    private EventReference arrowHit;
 
     private Rigidbody _rigidbody;
     private bool _inAir = false;
@@ -89,12 +93,18 @@ public class Arrow : XRGrabInteractable
                 {
                     _rigidbody.interpolation = RigidbodyInterpolation.None;
                     transform.SetParent(hitInfo.collider.transform);
-                    body.AddForce(new Vector3(0.01f,0.01f), ForceMode.Impulse);
+                    body.AddForce(new Vector3(0.01f, 0.01f), ForceMode.Impulse);
+                    
+                    if (!arrowHit.IsNull)
+                        RuntimeManager.PlayOneShot(arrowHit, transform.position);
                 }
                 if (hitInfo.transform.gameObject.layer == 12) // EQUIVALENT: LayerMask.GetMask("Rope")
                 {
                     OnArrowHitRope?.Invoke();
                     hitInfo.transform.GetComponent<Joint>().breakForce = 0;
+                    
+                    if (!arrowHit.IsNull)
+                        RuntimeManager.PlayOneShot(arrowHit, transform.position);
                 }
                 Stop();
             }

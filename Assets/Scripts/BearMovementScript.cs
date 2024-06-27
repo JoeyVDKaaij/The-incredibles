@@ -1,6 +1,7 @@
 using System;
 using UnityEditor;
 using UnityEngine;
+using FMODUnity;
 
 [System.Serializable]
 public class Waypoint
@@ -22,7 +23,11 @@ public class BearMovementScript : MonoBehaviour
     private Waypoint[] waypoints = null;
     [SerializeField, Tooltip("Set to true if the object should return to the first waypoint after reaching the last.")]
     private bool loopWaypoints;
-
+    [SerializeField]
+    private EventReference bearRoarEvent;
+    [SerializeField]
+    private EventReference bearWalkEvent;
+    
     private float _startTime, _journeyLength, _timer;
     private int _currentWaypoint;
     private bool stopMoving;
@@ -31,6 +36,8 @@ public class BearMovementScript : MonoBehaviour
     private Vector3 OldPosition;
 
     private Animator _animator;
+
+    private FMOD.Studio.EventInstance instance;
     
     private void Start()
     {
@@ -51,6 +58,9 @@ public class BearMovementScript : MonoBehaviour
         transform.hasChanged = false;
 
         _animator = GetComponent<Animator>();
+
+        if (!bearWalkEvent.IsNull)
+            instance = RuntimeManager.CreateInstance(bearWalkEvent);
     }
     
     private void OnDrawGizmos()
@@ -111,6 +121,8 @@ public class BearMovementScript : MonoBehaviour
             {
                 _startTime = Time.time;
                 _animator.SetBool("Walking", false);
+                if (!bearWalkEvent.IsNull)
+                    instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 return;
             }
 
@@ -119,10 +131,20 @@ public class BearMovementScript : MonoBehaviour
                 _startTime = Time.time;
                 _timer += Time.deltaTime;
                 _animator.SetBool("Walking", false);
+                if (!bearWalkEvent.IsNull)
+                    instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 return;
             }
-            
-            _animator.SetBool("Walking", true);
+
+            if (!_animator.GetBool("Walking"))
+            {
+                if (!bearWalkEvent.IsNull)
+                    instance.start();
+                if (!bearRoarEvent.IsNull)
+                    RuntimeManager.PlayOneShot(bearRoarEvent, transform.position);
+                
+                _animator.SetBool("Walking", true);
+            }
             
             Quaternion newRotation;
             if (_currentWaypoint+1 >= waypoints.Length)

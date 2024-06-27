@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using FMODUnity;
 
 public class Quiver : XRBaseInteractable
 {
@@ -7,6 +8,8 @@ public class Quiver : XRBaseInteractable
     [SerializeField] private GameObject bowPrefab = null;
     private bool bowSpawned = false;
 
+    private EventReference pickUpEventReference;
+    
     protected override void OnEnable()
     {
         base.OnEnable();
@@ -38,6 +41,8 @@ public class Quiver : XRBaseInteractable
         Bow bow = Instantiate(bowPrefab, args.interactorObject.transform.position, args.interactorObject.transform.rotation).GetComponent<Bow>();
         interactionManager.SelectEnter(args.interactorObject, bow);
         bowSpawned = true;
+        if (!pickUpEventReference.IsNull)
+            RuntimeManager.PlayOneShot(pickUpEventReference, transform.position);
     }
 
     private void CreateAndSelectArrow(SelectEnterEventArgs args)
@@ -49,6 +54,8 @@ public class Quiver : XRBaseInteractable
         // Create arrow, force into interacting hand
         Arrow arrow = CreateArrow(args.interactorObject.transform);
         interactionManager.SelectEnter(args.interactorObject, arrow);
+        if (!pickUpEventReference.IsNull)
+            RuntimeManager.PlayOneShot(pickUpEventReference, transform.position);
     }
 
     private Arrow CreateArrow(Transform orientation)
