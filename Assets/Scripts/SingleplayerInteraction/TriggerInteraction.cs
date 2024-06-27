@@ -12,6 +12,7 @@ public class TriggerInteraction : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            Debug.Log($"Player entered trigger for the TriggerInteraction script on the object: {gameObject.name}");
             interactionBehavior.TryInteract(false);
         }
     }

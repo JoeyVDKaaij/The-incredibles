@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -19,11 +19,11 @@ public class TutorialManager : MonoBehaviour
 
     void Start()
     {
-        if(PlayerCamera == null)
+        if (PlayerCamera == null)
         {
             Debug.LogError("Player camera reference not set in TutorialManager");
         }
-        foreach(TutorialStep step in tutorialSteps) // Initialize all steps adding the player reference
+        foreach (TutorialStep step in tutorialSteps) // Initialize all steps adding the player reference
         {
             step.Init(PlayerCamera);
         }
@@ -58,7 +58,8 @@ public class TutorialManager : MonoBehaviour
         {
             instructionImage.enabled = false;
         }
-        StartCoroutine(FadeInUI());
+        if (step.StarterStep)
+            StartCoroutine(FadeInUI());
     }
 
     IEnumerator FadeInUI()
