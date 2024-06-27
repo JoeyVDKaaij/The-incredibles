@@ -27,7 +27,7 @@ public class WalkAroundStep : TutorialStep
 
     private bool HasPlayerMoved()
     {
-        float distanceMoved = Vector3.Distance(initialPosition, player.transform.position); // Calculate the distance moved by the player
+        float distanceMoved = Vector3.Distance(new Vector3(initialPosition.x, 0, initialPosition.z), new Vector3(player.transform.position.x, 0 , player.transform.position.z)); // Calculate the distance moved by the player
         return distanceMoved >= distanceToMove; // Return true if the player has moved more than the set distance
     }
 }

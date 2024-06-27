@@ -2,29 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.XR.Interaction.Toolkit;
+using TMPro;
 
 public class TutorialManager : MonoBehaviour
 {
+    [Header("Player")]
+    [SerializeField, Tooltip("Please drag in the reference to the player camera")] private GameObject PlayerCamera;
+
+    [Space(5)]
     [SerializeField] private Canvas worldCanvas;
-    [SerializeField] private Text instructionText;
+    [SerializeField] private TextMeshProUGUI instructionText;
     [SerializeField] private Image instructionImage;
     [SerializeField] private List<TutorialStep> tutorialSteps;
 
     private Queue<TutorialStep> stepsQueue;
-    private GameObject player;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        if(player == null)
+        if(PlayerCamera == null)
         {
-            Debug.LogError("Player not found");
-            return;
+            Debug.LogError("Player camera reference not set in TutorialManager");
         }
         foreach(TutorialStep step in tutorialSteps) // Initialize all steps adding the player reference
         {
-            step.Init(player);
+            step.Init(PlayerCamera);
         }
         stepsQueue = new Queue<TutorialStep>(tutorialSteps);
         StartCoroutine(RunTutorial());
@@ -42,7 +43,7 @@ public class TutorialManager : MonoBehaviour
             //..............................//
             yield return StartCoroutine(FadeOutUI());
         }
-        EndTutorial();
+        //EndTutorial();
     }
 
     void ShowInstruction(TutorialStep step)
@@ -83,6 +84,30 @@ public class TutorialManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
             canvasGroup.alpha = 1 - Mathf.Clamp01(elapsedTime / fadeDuration);
             yield return null;
+        }
+    }
+
+    public void FadeInUINonCoroutine()
+    {
+        float elapsedTime = 0f;
+        float fadeDuration = 1f;
+        CanvasGroup canvasGroup = worldCanvas.GetComponent<CanvasGroup>();
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
+        }
+    }
+
+    public void FadeOutUINonCoroutine()
+    {
+        float elapsedTime = 0f;
+        float fadeDuration = 1f;
+        CanvasGroup canvasGroup = worldCanvas.GetComponent<CanvasGroup>();
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            canvasGroup.alpha = 1 - Mathf.Clamp01(elapsedTime / fadeDuration);
         }
     }
 

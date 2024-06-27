@@ -11,7 +11,7 @@ public abstract class TutorialStep : ScriptableObject
     public Sprite InstructionImage { get { return instructionImage; } }
 
     protected GameObject player;
-    public void Init(GameObject player)
+    public virtual void Init(GameObject player)
     {
         this.player = player;
     }
