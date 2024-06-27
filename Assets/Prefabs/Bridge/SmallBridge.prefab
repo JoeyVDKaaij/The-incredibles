@@ -1593,7 +1593,6 @@ Transform:
   - {fileID: 1708836835631950195}
   - {fileID: 4870199971557594836}
   - {fileID: 6179334539509423058}
-  - {fileID: 7538340312462695726}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &898792704536578783
@@ -9581,37 +9580,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &3727136763725332647
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7538340312462695726}
-  m_Layer: 0
-  m_Name: PlankParent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7538340312462695726
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3727136763725332647}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.197, y: -0.107, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1078761836875767105}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3842525080182532901
 GameObject:
   m_ObjectHideFlags: 0
@@ -20516,7 +20484,7 @@ PrefabInstance:
     - target: {fileID: 6552591110435435834, guid: 1fe0a84115be26447a1c3e8256dfcda0, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c587cac8808c8b745adbae420e9acc83, type: 3}
+      objectReference: {fileID: 21300000, guid: f311f50e98cd4fa4581a43b11b4a1e27, type: 3}
     - target: {fileID: 7279449959893459744, guid: 1fe0a84115be26447a1c3e8256dfcda0, type: 3}
       propertyPath: m_Name
       value: TutorialCanvas

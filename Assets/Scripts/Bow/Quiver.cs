@@ -3,6 +3,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Quiver : XRBaseInteractable
 {
+    public static event System.Action OnBowSpawned;
+    public static event System.Action OnArrowSpawned;
+
+
     [SerializeField] private GameObject arrowPrefab = null;
     [SerializeField] private GameObject bowPrefab = null;
     private bool bowSpawned = false;
@@ -38,6 +42,7 @@ public class Quiver : XRBaseInteractable
         Bow bow = Instantiate(bowPrefab, args.interactorObject.transform.position, args.interactorObject.transform.rotation).GetComponent<Bow>();
         interactionManager.SelectEnter(args.interactorObject, bow);
         bowSpawned = true;
+        OnBowSpawned?.Invoke();
     }
 
     private void CreateAndSelectArrow(SelectEnterEventArgs args)
@@ -49,6 +54,7 @@ public class Quiver : XRBaseInteractable
         // Create arrow, force into interacting hand
         Arrow arrow = CreateArrow(args.interactorObject.transform);
         interactionManager.SelectEnter(args.interactorObject, arrow);
+        OnArrowSpawned?.Invoke();
     }
 
     private Arrow CreateArrow(Transform orientation)

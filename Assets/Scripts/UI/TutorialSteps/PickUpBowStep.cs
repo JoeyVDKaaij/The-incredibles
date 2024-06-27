@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "PickUpBowStep", menuName = "ScriptableObjects/Steps/PickUpBowStep", order = 1)]
+[CreateAssetMenu(fileName = "PickUpBowStep", menuName = "Tutorial/Steps/PickUpBowStep", order = 1)]
 public class PickUpBowStep : TutorialStep
 {
-    [SerializeField] private UnityEvent onActionComplete;
-
-    private bool isBowPickedUp = false;
-
+    private bool hasPickedUpBow = false;
+    public override void Init(GameObject player)
+    {
+        base.Init(player);
+        Quiver.OnBowSpawned -= BowSpawned;
+        Quiver.OnBowSpawned += BowSpawned;
+    }
     public override bool Condition()
     {
-        throw new System.NotImplementedException();
+        return hasPickedUpBow;
+    }
+
+    public void BowSpawned()
+    {
+        hasPickedUpBow = true;
+        Quiver.OnBowSpawned -= BowSpawned;
     }
 }
