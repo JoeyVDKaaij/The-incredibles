@@ -227,6 +227,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particle System Fog (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1358607340483425422, guid: cbdee1fc77c134c47a5d8f13e5bd4d37, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.06666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 1358607340483425422, guid: cbdee1fc77c134c47a5d8f13e5bd4d37, type: 3}
+      propertyPath: InitialModule.startColor.minColor.a
+      value: 0.101960786
+      objectReference: {fileID: 0}
     - target: {fileID: 7206016112119639205, guid: cbdee1fc77c134c47a5d8f13e5bd4d37, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -266,6 +274,26 @@ PrefabInstance:
     - target: {fileID: 7206016112119639205, guid: cbdee1fc77c134c47a5d8f13e5bd4d37, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7424443554288311482, guid: cbdee1fc77c134c47a5d8f13e5bd4d37, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.06666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 7424443554288311482, guid: cbdee1fc77c134c47a5d8f13e5bd4d37, type: 3}
+      propertyPath: InitialModule.startColor.minColor.a
+      value: 0.101960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177772807159468970, guid: cbdee1fc77c134c47a5d8f13e5bd4d37, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487377343538776051, guid: cbdee1fc77c134c47a5d8f13e5bd4d37, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.06666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487377343538776051, guid: cbdee1fc77c134c47a5d8f13e5bd4d37, type: 3}
+      propertyPath: InitialModule.startColor.minColor.a
+      value: 0.101960786
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -19,6 +19,7 @@ public class DisableColliderAfterTime : MonoBehaviour
     private IEnumerator DisableCollider()
     {
         yield return new WaitForSeconds(timeToDisable);
+        Debug.Log("Disabling collider.....");
         colliderToDisable.enabled = false;
     }
 }
