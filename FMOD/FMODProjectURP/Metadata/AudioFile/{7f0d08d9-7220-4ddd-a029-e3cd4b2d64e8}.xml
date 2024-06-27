@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7f0d08d9-7220-4ddd-a029-e3cd4b2d64e8}">
+		<property name="assetPath">
+			<value>wood break/086356_bone-crack-2-84735.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.008</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{051f18dd-3866-4ea1-8a59-037f48145726}</destination>
+		</relationship>
+	</object>
+</objects>

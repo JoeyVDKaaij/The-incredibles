@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{aaf65029-c5bc-40d1-9c1f-1db70e866a8c}">
+		<property name="assetPath">
+			<value>ocean-waves-112906.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>24.685714285714287</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{051f18dd-3866-4ea1-8a59-037f48145726}</destination>
+		</relationship>
+	</object>
+</objects>

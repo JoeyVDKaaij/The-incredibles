@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{a1e57e69-4498-4f11-ba62-1d20026a1c3b}">
+		<property name="assetPath">
+			<value>wood break/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{051f18dd-3866-4ea1-8a59-037f48145726}</destination>
+		</relationship>
+	</object>
+</objects>

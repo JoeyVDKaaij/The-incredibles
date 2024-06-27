@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{0086bcba-8c85-4c88-950b-1b73ce266c04}">
+		<property name="assetPath">
+			<value>heavy-cineamtic-hit-166888.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.1200000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{051f18dd-3866-4ea1-8a59-037f48145726}</destination>
+		</relationship>
+	</object>
+</objects>
