@@ -20,10 +20,27 @@ public class AudioManager : Singleton<AudioManager>
 
     private void Start()
     {
-        // VcaMusicController = RuntimeManager.GetVCA($"vca:/{nameMusic}");
-        // VcaSFXController = RuntimeManager.GetVCA($"vca:/{nameSFX}");
+        VcaMusicController = RuntimeManager.GetVCA($"vca:/{nameMusic}");
+        VcaSFXController = RuntimeManager.GetVCA($"vca:/{nameSFX}");
+        
+        VcaMusicController.setVolume(volumeMusic);
+        VcaSFXController.setVolume(volumeSFX);
     }
 
+    public void SetVolume(float pVolume, bool isSFX)
+    {
+        if (isSFX)
+        {
+            volumeSFX = pVolume;
+            VcaSFXController.setVolume(volumeSFX);
+        }
+        else
+        {
+            volumeMusic = pVolume;
+            VcaMusicController.setVolume(volumeMusic);
+        }
+    }
+    
     public void PlayScareSound()
     {
         AudioSource aS = Instantiate(scareSound, gameObject.transform);
