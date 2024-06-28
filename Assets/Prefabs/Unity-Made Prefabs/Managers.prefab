@@ -126,3 +126,5 @@ MonoBehaviour:
   volumeMusic: 0.46
   volumeSFX: 0.225
   scareSound: {fileID: 0}
+  nameMusic: Music
+  nameSFX: SFX

@@ -1,4 +1,7 @@
+using System;
 using UnityEngine;
+using FMOD.Studio;
+using FMODUnity;
 
 public class AudioManager : Singleton<AudioManager>
 {
@@ -9,6 +12,17 @@ public class AudioManager : Singleton<AudioManager>
     public float volumeSFX = 1.0f;
     
     [SerializeField] private AudioSource scareSound;
+
+    private VCA VcaMusicController;
+    private VCA VcaSFXController;
+    [SerializeField, BankRef] private string nameMusic = "Music";
+    [SerializeField, BankRef] private string nameSFX = "SFX";
+
+    private void Start()
+    {
+        // VcaMusicController = RuntimeManager.GetVCA($"vca:/{nameMusic}");
+        // VcaSFXController = RuntimeManager.GetVCA($"vca:/{nameSFX}");
+    }
 
     public void PlayScareSound()
     {

@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
+using FMODUnity;
 
 [RequireComponent(typeof(PlayableDirector))]
 public class GameOverScript : MonoBehaviour
@@ -12,8 +13,9 @@ public class GameOverScript : MonoBehaviour
     private bool debugStartGameOver = false;
     [SerializeField, Tooltip("Start Game Over sequence by collisions.")]
     private bool startGameOverByCollision = false;
+    [SerializeField]
+    private EventReference gameOverEvent;
     
-
     private PlayableDirector _gameOverAnimation;
 
     private void Start()
@@ -31,6 +33,8 @@ public class GameOverScript : MonoBehaviour
 
     public void StartGameOver()
     {
+        if (!gameOverEvent.IsNull)
+            RuntimeManager.PlayOneShot(gameOverEvent, transform.position);
         StartCoroutine(nameof(GameOver));
     }
 

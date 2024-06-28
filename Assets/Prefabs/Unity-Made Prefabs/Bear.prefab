@@ -190,6 +190,20 @@ MonoBehaviour:
     timeUntilReturnMoving: 0
     movementSpeedMultiplier: 1
   loopWaypoints: 1
+  bearRoarEvent:
+    Guid:
+      Data1: 78572230
+      Data2: 1106292529
+      Data3: 1491153566
+      Data4: 841758097
+    Path: event:/Bear roar
+  bearWalkEvent:
+    Guid:
+      Data1: 126826444
+      Data2: 1093151366
+      Data3: -1006054468
+      Data4: 996355147
+    Path: event:/Bear Walk
   placedPosition: {x: 0, y: 0, z: 0}
 --- !u!320 &6309433593312787958
 PlayableDirector:
@@ -224,6 +238,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugStartGameOver: 0
   startGameOverByCollision: 1
+  gameOverEvent:
+    Guid:
+      Data1: 700793919
+      Data2: 1340006132
+      Data3: 268361114
+      Data4: -65756862
+    Path: event:/Bear attack
 --- !u!65 &8746367497170286770
 BoxCollider:
   m_ObjectHideFlags: 0

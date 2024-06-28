@@ -1,4 +1,5 @@
 using UnityEngine;
+using FMODUnity;
 
 [RequireComponent(typeof(BoxCollider))]
 public class PlankBreaking : MonoBehaviour
@@ -10,6 +11,8 @@ public class PlankBreaking : MonoBehaviour
 
     //This variable will be used to determine which plank we are currently on
     private bool isTouchingPlayer = false;
+
+    private EventReference breakPlankEventReference;
 
     private void OnValidate()
     {
@@ -57,6 +60,8 @@ public class PlankBreaking : MonoBehaviour
             }
             contactCollider.enabled = false;
             Destroy(gameObject, 5.0f);
+            if (!breakPlankEventReference.IsNull)
+                RuntimeManager.PlayOneShot(breakPlankEventReference, transform.position);
         }
     }
 
