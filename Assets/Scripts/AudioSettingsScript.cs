@@ -8,6 +8,7 @@ public class AudioSettingsScript : MonoBehaviour
     private bool changeMusicVolume = false;
 
     private XRKnob _xrKnob;
+    private float _oldValue;
     
     private void Start()
     {
@@ -16,13 +17,13 @@ public class AudioSettingsScript : MonoBehaviour
             _xrKnob.value = AudioManager.Instance.volumeMusic;
         else
             _xrKnob.value = AudioManager.Instance.volumeSFX;
+
+        _oldValue = _xrKnob.value;
     }
 
     private void Update()
     {
-        if (changeMusicVolume)
-            AudioManager.Instance.volumeMusic = _xrKnob.value;
-        else
-            AudioManager.Instance.volumeSFX = _xrKnob.value;
+        if (_xrKnob.value != _oldValue)
+            AudioManager.Instance.SetVolume(_xrKnob.value, changeMusicVolume);
     }
 }
