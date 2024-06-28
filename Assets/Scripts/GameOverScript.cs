@@ -45,7 +45,7 @@ public class GameOverScript : MonoBehaviour
         while (_gameOverAnimation.state == PlayState.Playing)
             yield return null;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(0);
     }
 
     private void OnCollisionEnter(Collision other)
