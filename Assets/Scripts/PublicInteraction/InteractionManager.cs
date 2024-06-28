@@ -8,7 +8,7 @@ public class InteractionManager : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = Camera.main.transform;
         foreach (var interaction in interactions)
         {
             interaction.SetPlayer(player);
