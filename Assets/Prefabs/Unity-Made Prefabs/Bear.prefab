@@ -178,18 +178,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09419ef23bc59794f98ccedf32e44e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3.76
+  movementSpeed: 1
   waypoints:
-  - position: {x: 0, y: 0, z: 0}
+  - position: {x: 0, y: 0.25, z: 0}
     timeUntilReturnMoving: 0
     movementSpeedMultiplier: 1
-  - position: {x: 0, y: 0, z: 4.27}
+  - position: {x: 8.2, y: 0.43, z: -9.11}
     timeUntilReturnMoving: 0
     movementSpeedMultiplier: 1
-  - position: {x: -9.9, y: 0, z: 4.27}
+  - position: {x: 18.05, y: 0.47, z: -7.8}
     timeUntilReturnMoving: 0
     movementSpeedMultiplier: 1
-  loopWaypoints: 1
+  - position: {x: 22.02, y: -1.49, z: -7.8}
+    timeUntilReturnMoving: 0
+    movementSpeedMultiplier: 1
+  - position: {x: 29.61, y: -2.7, z: -7.8}
+    timeUntilReturnMoving: 0
+    movementSpeedMultiplier: 1
+  - position: {x: 38.96, y: -6.62, z: -5.3}
+    timeUntilReturnMoving: 0
+    movementSpeedMultiplier: 1
+  - position: {x: 60.6, y: -8.9, z: -1.67}
+    timeUntilReturnMoving: 0
+    movementSpeedMultiplier: 1
+  - position: {x: 80.46, y: -8.9, z: 4.04}
+    timeUntilReturnMoving: 0
+    movementSpeedMultiplier: 1
+  loopWaypoints: 0
   bearRoarEvent:
     Guid:
       Data1: 78572230
@@ -264,7 +279,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.024490071, y: 0.03449803, z: 0.05869311}
+  m_Size: {x: 0.001, y: 0.03449803, z: 0.05869311}
   m_Center: {x: -0.0000000042997037, y: 0.017022453, z: 0.0027440044}
 --- !u!54 &5232740348556839832
 Rigidbody:
@@ -288,8 +303,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 96
   m_CollisionDetection: 0
